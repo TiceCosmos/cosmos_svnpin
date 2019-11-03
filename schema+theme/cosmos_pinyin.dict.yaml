@@ -12,6 +12,7 @@ columns:
   - code
   - weight
 import_tables:
+  - pinyin_simp
   - THUOCL_animal
   - THUOCL_caijing
   - THUOCL_car

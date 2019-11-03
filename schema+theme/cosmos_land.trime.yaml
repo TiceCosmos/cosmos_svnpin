@@ -1,1 +1,54 @@
-__include: cosmos_port:/
+__include: cosmos_port.trime:/
+name: 乱序-横屏
+author: 花蛄
+
+height:
+  1: &h1 45 #默认键盘高度
+  2: &h2 45 #底栏按键高度
+
+style:
+  candidate_view_height: 24
+  window: ""
+  layout:
+    sticky_lines: 0
+    max_entries: 0
+
+preset_keyboards:
+  cosmos_svnpin:
+    keys:
+    #第一行
+      - {click: n, label: "N", hint: "ou", long_click: "、", swipe_up: "、"}
+      - {click: t, label: "T", hint: "en ue", long_click: "7", swipe_up: "7"}
+      - {click: w, label: "W", hint: "ao", long_click: "8", swipe_up: "8"}
+      - {click: g, label: "G J", hint: "an", long_click: "9", swipe_up: "9"}
+      - {click: Theme_settings, long_click: "0", swipe_up: "0"}
+      - {click: g, label: "G J", hint: "an", long_click: "9", swipe_up: "9"}
+      - {click: z, label: "Z", hint: "iu ua", long_click: "8", swipe_up: "8"}
+      - {click: c, label: "C", hint: "iao uai", long_click: "7", swipe_up: "7"}
+      - {click: s, label: "S", hint: "[iu]ang", long_click: "？", swipe_up: "？"}
+    #第二行
+      - {click: p, label: "P", hint: "uan", long_click: "，", swipe_up: "，"}
+      - {click: d, label: "D", hint: "a ia", long_click: "4", swipe_up: "4"}
+      - {click: l, label: "L", hint: "ai", long_click: "5", swipe_up: "5"}
+      - {click: k, label: "K Q", hint: "ang", long_click: "6", swipe_up: "6"}
+      - {click: cut_all, long_click: "0", swipe_up: "0"}
+      - {click: k, label: "K Q", hint: "ang", long_click: "6", swipe_up: "6"}
+      - {click: j, label: "Zh", hint: "ei", long_click: "5", swipe_up: "5"}
+      - {click: q, label: "Ch", hint: "e ie", long_click: "4", swipe_up: "4"}
+      - {click: x, label: "Sh", hint: "ong ian", long_click: "！", swipe_up: "！"}
+    #第三行
+      - {click: m, label: "M", hint: "ui ing", long_click: "。", swipe_up: "。"}
+      - {click: b, label: "B", hint: "uo in", long_click: "1", swipe_up: "1"}
+      - {click: f, label: "F", hint: "i iong", long_click: "2", swipe_up: "2"}
+      - {click: h, label: "H X", hint: "u er v", long_click: "3", swipe_up: "3"}
+      - {click: paste, long_click: "0", swipe_up: "0", label: '粘贴'}
+      - {click: h, label: "H X", hint: "u er v", long_click: "3", swipe_up: "3"}
+      - {click: r, label: "R", hint: "o un", long_click: "2", swipe_up: "2"}
+      - {click: y, label: "Y ~", hint: "eng", long_click: "1", swipe_up: "1"}
+      - {click: BackSpace}
+    #第四行
+      - {click: Keyboard_letter, width: *w5, has_menu: BUTTON_1}
+      - {click: undo, width: *w5, has_menu: BUTTON_2}
+      - {click: space, width: *w5, has_menu: BUTTON_3}
+      - {click: Return, width: *w5, has_menu: BUTTON_4}
+      - {click: Hide, width: *w5, has_menu: BUTTON_5}
