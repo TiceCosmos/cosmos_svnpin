@@ -1,0 +1,124 @@
+# Rime schema settings
+# encoding: utf-8
+
+schema:
+  name: "乱序双拼"
+  schema_id: cosmos_svnpin
+  version: "19.3"
+  author:
+    - 花蛄
+  description:
+    乱序双拼二十键，适用于双拇指点击
+  dependencies:
+    - cosmos_pinyin
+
+switches:
+
+engine:
+  processors:
+    - ascii_composer
+    - key_binder
+    - speller
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - abc_segmentor
+    - fallback_segmentor
+  translators:
+    - script_translator
+
+speller:
+  alphabet: qwertyuiopasdfghjklzxcvbnm
+  delimiter: " '"
+  auto_select: false
+  use_space: true
+  algebra:
+    - "xform/^([aoe])ng/y$1ng/"
+    - "xform/^([aoe])([oiunr])/y$1$2/"
+    - "xform/^([aoe])/y$1/"
+    - "xform/^j/g/"
+    - "xform/^q/k/"
+    - "xform/^x/h/"
+    - "xform/^zh/j/"
+    - "xform/^ch/q/"
+    - "xform/^sh/x/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])iang/$1s/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])uang/$1s/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])iong/$1f/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])ang/$1k/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])ong/$1x/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])eng/$1y/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])ing/$1m/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])ian/$1x/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])iao/$1c/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])uai/$1c/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])uan/$1p/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])ao/$1w/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])ai/$1l/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])an/$1g/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])ei/$1j/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])en/$1t/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])er/$1h/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])ia/$1d/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])ie/$1q/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])iu/$1z/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])in/$1b/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])ou/$1n/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])ua/$1z/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])uo/$1b/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])ue/$1t/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])ui/$1m/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])un/$1r/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])a/$1d/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])o/$1r/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])e/$1q/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])i/$1f/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])u/$1h/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw])v/$1h/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw]+[12345][12345])[12345]*$/$1/"
+    - "derive/^([bpmfdtnlgkhjqxrzcsyw]+)[12345]*$/$1/"
+    - "derive/^([bpmfdtnlgkhjqxrzcsyw]+[12345])[12345]*$/$1/"
+    - "xlit/12345/aoeiu/"
+
+translator:
+  dictionary: cosmos_pinyin
+  prism: cosmos_svnpin
+  enable_user_dict: true
+  spelling_hints: 10
+  comment_format:
+    - xform/([12345][12345])[12345]*/$1/
+    - xform/11/二/
+    - xform/12/丅/
+    - xform/13/厂/
+    - xform/14/乁/
+    - xform/15/丂/
+    - xform/21/丄/
+    - xform/22/刂/
+    - xform/23/リ/
+    - xform/24/卜/
+    - xform/25/冂/
+    - xform/31/千/
+    - xform/32/川/
+    - xform/33/彡/
+    - xform/34/八/
+    - xform/35/儿/
+    - xform/41/亡/
+    - xform/42/门/
+    - xform/43/ソ/
+    - xform/44/斗/
+    - xform/45/之/
+    - xform/51/刁/
+    - xform/52/了/
+    - xform/53/刀/
+    - xform/54/又/
+    - xform/55/巜/
+    - xform/1/㇐/
+    - xform/2/㇑/
+    - xform/3/丿/
+    - xform/4/㇔/
+    - xform/5/乚/
+
+key_binder:
+  import_preset: default

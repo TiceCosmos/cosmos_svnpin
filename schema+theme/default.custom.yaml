@@ -1,0 +1,10 @@
+customization:
+  distribution_code_name: ""
+  distribution_version: ""
+  generator: "Rime::SwitcherSettings"
+  modified_time: "Thu Jul 18 20:35:17 2019"
+  rime_version: 1.3.2
+patch:
+  "menu/page_size": 15
+  schema_list:
+    - {schema: cosmos_svnpin}
