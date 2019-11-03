@@ -1,6 +1,11 @@
 # trime-cosmos_svnpin
 乱序双拼二十键，适用于双拇指打字
 
+## 字典、词典来源
+0. [THUOCL](thuocl.thunlp.org)
+0. [android open source project](android.git.kernel.org/?p=platform/packages/inputmethods/PinyinIME)
+0. 忘记来源的
+
 ## 键盘显示
 
 0. 汉字键盘
