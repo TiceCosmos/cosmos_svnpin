@@ -280,26 +280,6 @@ patch:
       - {click: Return, width: 33.4}
       - {click: BackSpace, width: 33.4}
 
-  "preset_keyboards/mine":
-    name: '自定义键盘'
-    author: '花蛄'
-    ascii_mode: 0
-    height: 60
-    width: 33.333
-    keys:
-      - {click: '', label: ''}
-      - {click: '', label: ''}
-      - {click: '', label: ''}
-      - {click: '', label: ''}
-      - {click: '', label: ''}
-      - {click: '', label: ''}
-      - {click: '', label: ''}
-      - {click: '', label: ''}
-      - {click: '', label: ''}
-      - {click: Keyboard_default, height: 66}
-      - {click: undo}
-      - {click: BackSpace}
-
   "preset_keyboards/emoji":
     name: '符号'
     author: '花蛄'
