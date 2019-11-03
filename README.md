@@ -3,7 +3,7 @@
 
 ## 字典、词典来源
 0. [THUOCL](thuocl.thunlp.org)
-0. [android open source project](android.git.kernel.org/?p=platform/packages/inputmethods/PinyinIME)
+0. [Rime Developers](rime.org)
 0. 忘记来源的
 
 ## 键盘显示
