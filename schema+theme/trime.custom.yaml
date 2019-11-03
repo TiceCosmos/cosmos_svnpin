@@ -287,13 +287,13 @@ patch:
     height: 60
     width: 33.333
     keys:
-      - {click: '15135684319', label: '联系电话'}
-      - {click: '花蛄@139.COM', label: '电子邮箱'}
-      - {click: '穷宇之奥秘，集宙之精华。', label: '生命意义'}
-      - {click: '广东省东莞市南城街道台心路2号雅园新村9栋', label: '居住地址'}
-      - {click: '山西省晋城市沁水县龙港镇五柳庄住宅小区63号302', label: '家庭地址'}
-      - {click: '广东省东莞市东城街道牛山外径工业园伟丰路2号劲胜工厂(富兴物流对面)', label: '工作地址'}
-      - {click: '名称：东莞灵虎智能科技有限公司，税号：91441900MA521GH05C，单位地址：东莞市东城街道牛山社区外经工业园伟丰路2号研发耧304，电话号码：13826563511，开户银行：招商银行股份有限公司东莞东城支行，银行账户：7699 0717 3310 999', label: '东莞灵虎'}
+      - {click: '', label: ''}
+      - {click: '', label: ''}
+      - {click: '', label: ''}
+      - {click: '', label: ''}
+      - {click: '', label: ''}
+      - {click: '', label: ''}
+      - {click: '', label: ''}
       - {click: '', label: ''}
       - {click: '', label: ''}
       - {click: Keyboard_default, height: 66}
