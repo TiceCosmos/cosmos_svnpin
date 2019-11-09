@@ -8,11 +8,11 @@ target/merge.txt: src/merge.py target/pinyin_word.txt target/pinyin_phrase.txt t
 target/pinyin_word.txt: makefile target src/luna_pinyin.dict.yaml
 	@grep -P "^.\t" src/luna_pinyin.dict.yaml > $@
 target/pinyin_phrase.txt: makefile target src/luna_pinyin.dict.yaml
-	@grep -P "\t" src/luna_pinyin.dict.yaml | grep -v -P "^.\t" | cconv -f UTF8-TW -t UTF8-CN > $@
+	@grep -P "\t" src/luna_pinyin.dict.yaml | grep -v -P "^.\t" | opencc -c t2s > $@
 target/stroke.txt: makefile target src/stroke.dict.yaml
 	@cat src/stroke.dict.yaml | grep -P "^.\t" | sed 's/h/H/g;s/s/S/g;s/p/P/g;s/n/N/g;s/z/Z/g' > $@
 target/essay.txt: makefile target src/essay.txt
-	@grep -P "\t" src/essay.txt | grep -v -P "^.\t" | cconv -f UTF8-TW -t UTF8-CN > $@
+	@grep -P "\t" src/essay.txt | grep -v -P "^.\t" | opencc -c t2s > $@
 target:
 	@mkdir $@
 clean:
