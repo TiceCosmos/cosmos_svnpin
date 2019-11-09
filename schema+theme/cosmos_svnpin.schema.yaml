@@ -13,6 +13,8 @@ schema:
     - cosmos_pinyin
 
 switches:
+  - name: simplification
+    reset: 0
 
 engine:
   processors:
@@ -25,9 +27,14 @@ engine:
   segmentors:
     - ascii_segmentor
     - abc_segmentor
+    - punct_segmentor
     - fallback_segmentor
   translators:
+    - echo_translator
     - script_translator
+  filters:
+    - simplifier
+    - uniquifier
 
 speller:
   alphabet: qwertyuiopasdfghjklzxcvbnm
@@ -77,10 +84,11 @@ speller:
     - "xform/^([bpmfdtnlgkhjqxrzcsyw])i/$1f/"
     - "xform/^([bpmfdtnlgkhjqxrzcsyw])u/$1h/"
     - "xform/^([bpmfdtnlgkhjqxrzcsyw])v/$1h/"
-    - "xform/^([bpmfdtnlgkhjqxrzcsyw]+[12345][12345])[12345]*$/$1/"
-    - "derive/^([bpmfdtnlgkhjqxrzcsyw]+)[12345]*$/$1/"
-    - "derive/^([bpmfdtnlgkhjqxrzcsyw]+[12345])[12345]*$/$1/"
-    - "xlit/12345/aoeiu/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw]+[HSPNZ][HSPNZ])[HSPNZ]*([HSPNZ])$/$1$2/"
+    - "derive/^([bpmfdtnlgkhjqxrzcsyw]+)[HSPNZ]*$/$1/"
+    - "derive/^([bpmfdtnlgkhjqxrzcsyw]+[HSPNZ])[HSPNZ]*$/$1/"
+    - "derive/^([bpmfdtnlgkhjqxrzcsyw]+[HSPNZ][HSPNZ])[HSPNZ]*$/$1/"
+    - "xlit/HSPNZ/aoeiu/"
 
 translator:
   dictionary: cosmos_pinyin
@@ -88,37 +96,12 @@ translator:
   enable_user_dict: true
   spelling_hints: 10
   comment_format:
-    - xform/([12345][12345])[12345]*/$1/
-    - xform/11/二/
-    - xform/12/丅/
-    - xform/13/厂/
-    - xform/14/乁/
-    - xform/15/丂/
-    - xform/21/丄/
-    - xform/22/刂/
-    - xform/23/リ/
-    - xform/24/卜/
-    - xform/25/冂/
-    - xform/31/千/
-    - xform/32/川/
-    - xform/33/彡/
-    - xform/34/八/
-    - xform/35/儿/
-    - xform/41/亡/
-    - xform/42/门/
-    - xform/43/ソ/
-    - xform/44/斗/
-    - xform/45/之/
-    - xform/51/刁/
-    - xform/52/了/
-    - xform/53/刀/
-    - xform/54/又/
-    - xform/55/巜/
-    - xform/1/㇐/
-    - xform/2/㇑/
-    - xform/3/丿/
-    - xform/4/㇔/
-    - xform/5/乚/
+    - xform/([HSPNZ])[HSPNZ]*/$1/
+    - xform/H/㇐/
+    - xform/S/㇑/
+    - xform/P/丿/
+    - xform/N/㇔/
+    - xform/Z/𡿨/
 
 key_binder:
   import_preset: default
