@@ -1,7 +1,7 @@
 # SHELL=/bin/bash
 .PHONY: all clean
-all: target/cosmos_pinyin.dict.yaml target/essay.txt
-target/cosmos_pinyin.dict.yaml: src/head.txt target/merge.txt
+all: schema/cosmos_pinyin.dict.yaml target/essay.txt
+schema/cosmos_pinyin.dict.yaml: src/head.txt target/merge.txt
 	@cat src/head.txt target/merge.txt > $@
 target/merge.txt: src/merge.py target/pinyin_word.txt target/pinyin_phrase.txt target/stroke.txt
 	@./src/merge.py target/pinyin_word.txt target/pinyin_phrase.txt target/stroke.txt > $@
