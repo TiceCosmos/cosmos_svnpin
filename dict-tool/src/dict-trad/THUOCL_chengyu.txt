@@ -1,15 +1,3 @@
-# Rime dictionary
-# encoding: utf-8
-
----
-name: THUOCL_chengyu
-version: "0.1"
-sort: by_weight
-columns:
-  - text
-  - weight
-...
-
 坚定不移	54113
 随时随地	52510
 全力以赴	36156

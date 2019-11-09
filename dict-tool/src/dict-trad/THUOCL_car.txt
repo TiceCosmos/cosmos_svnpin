@@ -1,15 +1,3 @@
-# Rime dictionary
-# encoding: utf-8
-
----
-name: THUOCL_car
-version: "0.1"
-sort: by_weight
-columns:
-  - text
-  - weight
-...
-
 轿车	1424796
 二手车	1112665
 新车	824358

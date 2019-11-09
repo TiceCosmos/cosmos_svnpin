@@ -1,15 +1,3 @@
-# Rime dictionary
-# encoding: utf-8
-
----
-name: THUOCL_poem
-version: "0.1"
-sort: by_weight
-columns:
-  - text
-  - weight
-...
-
 更上一层楼	4472
 民以食为天	3900
 任重而道远	3742

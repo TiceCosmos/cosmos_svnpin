@@ -1,15 +1,3 @@
-# Rime dictionary
-# encoding: utf-8
-
----
-name: THUOCL_caijing
-version: "0.1"
-sort: by_weight
-columns:
-  - text
-  - weight
-...
-
 发展	1934814
 部门	1709250
 政府	1617499

@@ -1,15 +1,3 @@
-# Rime dictionary
-# encoding: utf-8
-
----
-name: THUOCL_animal
-version: "0.1"
-sort: by_weight
-columns:
-  - text
-  - weight
-...
-
 信鸽	220963
 黄蜂	118861
 水母	78147

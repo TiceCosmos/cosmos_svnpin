@@ -1,13 +1,3 @@
-﻿# Rime dictionary
-# encoding: utf-8
-# 码表结构：拼音＋笔画
-
----
-name: cosmos_pinyin
-version: "2019.11.9"
-sort: by_weight
-use_preset_vocabulary: true
-...
 〇	lingZ
 㐀	qiuSHHSH
 㐁	tianHSZPNH

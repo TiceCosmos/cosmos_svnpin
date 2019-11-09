@@ -1,15 +1,3 @@
-# Rime dictionary
-# encoding: utf-8
-
----
-name: THUOCL_food
-version: "0.1"
-sort: by_weight
-columns:
-  - text
-  - weight
-...
-
 土豆	1777511
 苹果	1143881
 蛋糕	815478

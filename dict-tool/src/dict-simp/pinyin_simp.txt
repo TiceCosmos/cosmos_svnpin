@@ -1,15 +1,3 @@
-# Rime dictionary
-# encoding: utf-8
-
----
-name: pinyin_simp
-version: "0.1"
-sort: by_weight
-columns:
-  - text
-  - weight
-...
-
 粑粑	149
 巴巴	322
 爸爸	9814

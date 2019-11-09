@@ -1,15 +1,3 @@
-# Rime dictionary
-# encoding: utf-8
-
----
-name: THUOCL_it
-version: "0.1"
-sort: by_weight
-columns:
-  - text
-  - weight
-...
-
 字符串	395499
 初始化	372767
 数组	357924

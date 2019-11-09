@@ -1,15 +1,3 @@
-# Rime dictionary
-# encoding: utf-8
-
----
-name: THUOCL_medical
-version: "0.1"
-sort: by_weight
-columns:
-  - text
-  - weight
-...
-
 精神	606946
 医院	580436
 检查	580138

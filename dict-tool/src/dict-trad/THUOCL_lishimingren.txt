@@ -1,15 +1,3 @@
-# Rime dictionary
-# encoding: utf-8
-
----
-name: THUOCL_lishimingren
-version: "0.1"
-sort: by_weight
-columns:
-  - text
-  - weight
-...
-
 毛泽东	61678
 胡锦涛	58429
 普京	49718
