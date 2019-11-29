@@ -18,7 +18,7 @@ width:
 
 height:
   1: &h1 60 #默认键盘高度
-  2: &h2 66 #底栏按键高度
+  2: &h2 60 #底栏按键高度
 
 style:
   locale: zh_CN
@@ -28,8 +28,8 @@ style:
   key_long_text_size: 22
   label_text_size: 22
   layout:
-    sticky_lines: 5
-    max_entries: 5
+    sticky_lines: 7
+    max_entries: 7
     min_length: 1
     max_length: 100
     max_width: 600
@@ -67,38 +67,39 @@ preset_keyboards:
     name: '二十键乱序双拼'
     author: '花蛄'
     ascii_mode: 0
+    ascii_keyboard: letter
     height: *h1
     width: *w7
     keys:
       #第一行
-      - {click: n, label: 'N', hint: 'ou', long_click: '《》{Left}', swipe_up: '《》{Left}'}
+      - {click: n, label: 'N', hint: 'ou', long_click: '“”{Left}', swipe_up: '“”{Left}'}
       - {click: t, label: 'T', hint: 'en ue', long_click: '、', swipe_up: '、'}
       - {click: w, label: 'W', hint: 'ao', long_click: '，', swipe_up: '，'}
       - {click: g, label: 'G J', hint: 'an', long_click: '。', swipe_up: '。'}
       - {click: z, label: 'Z', hint: 'iu ua', long_click: '！', swipe_up: '！'}
       - {click: c, label: 'C', hint: 'iao uai', long_click: '？', swipe_up: '？'}
-      - {click: s, label: 'S', hint: '[iu]ang', long_click: '……', swipe_up: '……'}
+      - {click: s, label: 'S', hint: '[iu]ang', long_click: '@', swipe_up: '@'}
       #第二行
-      - {click: p, label: 'P', hint: 'uan', long_click: '“”{Left}', swipe_up: '“”{Left}'}
-      - {click: d, label: 'D', hint: 'a ia', long_click: '1', swipe_up: '1'}
-      - {click: l, label: 'L', hint: 'ai', long_click: '2', swipe_up: '2'}
-      - {click: k, label: 'K Q', hint: 'ang', long_click: '3', swipe_up: '3'}
-      - {click: j, label: 'Zh', hint: 'ei', long_click: '4', swipe_up: '4'}
-      - {click: q, label: 'Ch', hint: 'e ie', long_click: '5', swipe_up: '5'}
-      - {click: x, label: 'Sh', hint: 'ong ian', long_click: '@', swipe_up: '@'}
+      - {click: p, label: 'P', hint: 'uan', long_click: '1', swipe_up: '1'}
+      - {click: d, label: 'D', hint: 'a ia', long_click: '2', swipe_up: '2'}
+      - {click: l, label: 'L', hint: 'ai', long_click: '3', swipe_up: '3'}
+      - {click: k, label: 'K Q', hint: 'ang', long_click: '4', swipe_up: '4'}
+      - {click: j, label: 'Zh', hint: 'ei', long_click: '5', swipe_up: '5'}
+      - {click: q, label: 'Ch', hint: 'e ie', long_click: '6', swipe_up: '6'}
+      - {click: x, label: 'Sh', hint: 'ong ian', long_click: '7', swipe_up: '7'}
       #第三行
-      - {click: m, label: 'M', hint: 'ui ing', long_click: '（）{Left}', swipe_up: '（）{Left}'}
-      - {click: b, label: 'B', hint: 'uo in', long_click: '6', swipe_up: '6'}
-      - {click: f, label: 'F', hint: 'i iong', long_click: '7', swipe_up: '7'}
-      - {click: h, label: 'H X', hint: 'u er v', long_click: '8', swipe_up: '8'}
-      - {click: r, label: 'R', hint: 'o un', long_click: '9', swipe_up: '9'}
-      - {click: y, label: 'Y ~', hint: 'eng', long_click: '0', swipe_up: '0'}
-      - {click: BackSpace}
+      - {click: m, label: 'M', hint: 'ui ing', long_click: '1', swipe_up: '1'}
+      - {click: b, label: 'B', hint: 'uo in', long_click: '2', swipe_up: '2'}
+      - {click: f, label: 'F', hint: 'i iong', long_click: '3', swipe_up: '3'}
+      - {click: h, label: 'H X', hint: 'u er v', long_click: '4', swipe_up: '4'}
+      - {click: r, label: 'R', hint: 'o un', long_click: '5', swipe_up: '5'}
+      - {click: y, label: 'Y ~', hint: 'eng', long_click: '6', swipe_up: '6'}
+      - {click: BackSpace, long_click: '7', swipe_up: '7'}
       #第四行
       - {click: Keyboard_letter, long_click: Keyboard_alpha, swipe_up: Keyboard_alpha, has_menu: Page_Up, hint: '在这茫', height: *h2}
       - {click: Keyboard_number, long_click: Keyboard_emoji, swipe_up: Keyboard_emoji, has_menu: BUTTON_1, hint: '茫的宇'}
       - {click: Keyboard_punctuation, long_click: Left, swipe_up: Left, has_menu: BUTTON_2, hint: '宙中，'}
-      - {click: space, long_click: Theme_settings, swipe_up: Hide, has_menu: BUTTON_3, hint: '如同尘'}
+      - {click: space, long_click: Theme_settings, swipe_up: Theme_settings, has_menu: BUTTON_3, hint: '如同尘'}
       - {click: Keyboard_select, long_click: Right, swipe_up: Right, has_menu: BUTTON_4, hint: '埃的我'}
       - {click: Return, long_click: Keyboard_mine, swipe_up: Keyboard_mine, has_menu: BUTTON_5, hint: '应何去', label: 'Etr'}
       - {click: paste, long_click: undo, swipe_up: undo, has_menu: Page_Down, hint: '何从！'}
