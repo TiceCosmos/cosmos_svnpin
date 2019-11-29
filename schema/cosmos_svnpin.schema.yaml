@@ -84,10 +84,9 @@ speller:
     - "xform/^([bpmfdtnlgkhjqxrzcsyw])i/$1f/"
     - "xform/^([bpmfdtnlgkhjqxrzcsyw])u/$1h/"
     - "xform/^([bpmfdtnlgkhjqxrzcsyw])v/$1h/"
-    - "xform/^([bpmfdtnlgkhjqxrzcsyw]+[HSPNZ][HSPNZ])[HSPNZ]*([HSPNZ])$/$1$2/"
+    - "xform/^([bpmfdtnlgkhjqxrzcsyw]+[HSPNZ])[HSPNZ]*([HSPNZ])$/$1$2/"
     - "derive/^([bpmfdtnlgkhjqxrzcsyw]+)[HSPNZ]*$/$1/"
     - "derive/^([bpmfdtnlgkhjqxrzcsyw]+[HSPNZ])[HSPNZ]*$/$1/"
-    - "derive/^([bpmfdtnlgkhjqxrzcsyw]+[HSPNZ][HSPNZ])[HSPNZ]*$/$1/"
     - "xlit/HSPNZ/aoeiu/"
 
 translator:
