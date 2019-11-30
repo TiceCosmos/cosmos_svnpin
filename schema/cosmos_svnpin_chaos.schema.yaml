@@ -3,7 +3,7 @@
 
 schema:
   name: "乱序双拼"
-  schema_id: cosmos_svnpin
+  schema_id: cosmos_svnpin_chaos
   version: "19.3"
   author:
     - 花蛄
@@ -91,7 +91,7 @@ speller:
 
 translator:
   dictionary: cosmos_pinyin
-  prism: cosmos_svnpin
+  prism: cosmos_svnpin_chaos
   enable_user_dict: true
   spelling_hints: 10
   comment_format:

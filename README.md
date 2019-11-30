@@ -1,5 +1,4 @@
 # trime-cosmos_svnpin
-乱序双拼二十键，适用于双拇指打字
 
 ## 字典、词典来源
 0. [THUOCL](thuocl.thunlp.org)
