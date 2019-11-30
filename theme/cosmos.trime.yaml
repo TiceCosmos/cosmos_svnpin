@@ -18,7 +18,7 @@ width:
 
 style:
   locale: zh_CN
-  keyboards: [.default, cosmos_punctuation, cosmos_letter, cosmos_alpha, cosmos_number, cosmos_math, cosmos_select, cosmos_mine, cosmos_emoji]
+  keyboards: [.default, cosmos_svnpin_port_l, cosmos_svnpin_port_r, cosmos_punctuation, cosmos_letter, cosmos_alpha, cosmos_number, cosmos_math, cosmos_select, cosmos_mine, cosmos_emoji]
   key_text_size: 22
   key_long_text_size: 22
   label_text_size: 22
@@ -31,6 +31,8 @@ style:
 
 preset_keys:
   Keyboard_default: {label: '返', select: .default, send: Eisu_toggle}
+  Keyboard_default_l: {label: '左', select: cosmos_svnpin_port_l, send: Eisu_toggle}
+  Keyboard_default_r: {label: '右', select: cosmos_svnpin_port_r, send: Eisu_toggle}
   Keyboard_letter: {label: 'En', select: cosmos_letter, send: Eisu_toggle}
   Keyboard_number: {label: '123', select: cosmos_number, send: Eisu_toggle}
   Keyboard_punctuation: {label: '＠', select: cosmos_ punctuation, send: Eisu_toggle}
@@ -94,11 +96,11 @@ preset_keyboards:
       - {click: BackSpace, width: *w8}
       #第四行
       - {click: Keyboard_letter, width: *w7, has_menu: Page_Up, hint: '在这茫'}
-      - {click: Return, width: *w7, has_menu: BUTTON_1, hint: '茫的宇'}
-      - {click: space, width: *w7, has_menu: BUTTON_2, hint: '宙中，', label: 'Space'}
+      - {click: space, width: *w7, has_menu: BUTTON_1, hint: '茫的宇', label: 'Space'}
+      - {click: cut_all, width: *w7, has_menu: BUTTON_2, hint: '宙中，'}
       - {click: Schema_switch, width: *w7, has_menu: BUTTON_3, hint: '如同尘'}
-      - {click: cut_all, width: *w7, has_menu: BUTTON_4, hint: '埃的我'}
-      - {click: undo, width: *w7, has_menu: BUTTON_5, hint: '应何去'}
+      - {click: undo, width: *w7, has_menu: BUTTON_4, hint: '埃的我'}
+      - {click: Return, width: *w7, has_menu: BUTTON_5, hint: '应何去'}
       - {click: paste, width: *w7, has_menu: Page_Down, hint: '何从！'}
 
   cosmos_svnpin_port:
@@ -129,9 +131,75 @@ preset_keyboards:
       #第四行
       - {click: Keyboard_letter, width: *w7, long_click: Keyboard_alpha, swipe_up: Keyboard_alpha, has_menu: Page_Up, hint: '在这茫'}
       - {click: Keyboard_number, width: *w7, long_click: Keyboard_emoji, swipe_up: Keyboard_emoji, has_menu: BUTTON_1, hint: '茫的宇'}
-      - {click: Keyboard_punctuation, width: *w7, long_click: Left, swipe_up: Left, has_menu: BUTTON_2, hint: '宙中，'}
+      - {click: Keyboard_punctuation, width: *w7, long_click: Keyboard_default_l, swipe_up: Keyboard_default_l, has_menu: BUTTON_2, hint: '宙中，'}
       - {click: space, width: *w7, long_click: Schema_switch, swipe_up: Schema_switch, has_menu: BUTTON_3, hint: '如同尘'}
-      - {click: Keyboard_select, width: *w7, long_click: Right, swipe_up: Right, has_menu: BUTTON_4, hint: '埃的我'}
+      - {click: Keyboard_select, width: *w7, long_click: Keyboard_default_r, swipe_up: Keyboard_default_r, has_menu: BUTTON_4, hint: '埃的我'}
+      - {click: Return, width: *w7, long_click: Keyboard_mine, swipe_up: Keyboard_mine, has_menu: BUTTON_5, hint: '应何去', label: 'Etr'}
+      - {click: paste, width: *w7, long_click: undo, swipe_up: undo, has_menu: Page_Down, hint: '何从！'}
+  cosmos_svnpin_port_l:
+    name: '双键双拼'
+    author: '花蛄'
+    ascii_mode: 0
+    ascii_keyboard: cosmos_letter
+    width: *w6
+    keys:
+      #第一行
+      - {click: q, width: *w3, label: 'Q', hint: 'iu ia ua', long_click: '“”{Left}', swipe_up: '“”{Left}'}
+      - {click: e, label: 'E', hint: 'e uan', long_click: '《》{Left}', swipe_up: '《》{Left}'}
+      - {click: t, label: 'T', hint: 'ue ing uai', long_click: '……', swipe_up: '……'}
+      - {click: u, label: 'U', hint: 'u i', long_click: '！', swipe_up: '！'}
+      - {click: o, label: 'O', hint: 'o uo un', long_click: '@', swipe_up: '@'}
+      #第二行
+      - {click: a, width: *w3, label: 'A', hint: 'a ong iong', long_click: '1', swipe_up: '1'}
+      - {click: d, label: 'D', hint: 'en [iu]ang', long_click: '2', swipe_up: '2'}
+      - {click: g, label: 'G', hint: 'ang eng', long_click: '3', swipe_up: '3'}
+      - {click: j, label: 'J', hint: 'an ao', long_click: '4', swipe_up: '4'}
+      - {click: l, label: 'L', hint: 'ai', long_click: '5', swipe_up: '5'}
+      #第三行
+      - {click: x, width: *w3, label: 'X', hint: 'ei ie', long_click: '。', swipe_up: '。'}
+      - {click: c, label: 'C', hint: 'v iu iao', long_click: '，', swipe_up: '，'}
+      - {click: b, label: 'B', hint: 'in', long_click: '、', swipe_up: '、'}
+      - {click: m, label: 'M', hint: 'ian', long_click: '？', swipe_up: '？'}
+      - {click: BackSpace}
+      #第四行
+      - {click: Keyboard_letter, width: *w7, long_click: Keyboard_alpha, swipe_up: Keyboard_alpha, has_menu: Page_Up, hint: '在这茫'}
+      - {click: Keyboard_number, width: *w7, long_click: Keyboard_emoji, swipe_up: Keyboard_emoji, has_menu: BUTTON_1, hint: '茫的宇'}
+      - {click: Keyboard_punctuation, width: *w7, long_click: Keyboard_default, swipe_up: Keyboard_default, has_menu: BUTTON_2, hint: '宙中，'}
+      - {click: space, width: *w7, long_click: Schema_switch, swipe_up: Schema_switch, has_menu: BUTTON_3, hint: '如同尘'}
+      - {click: Keyboard_select, width: *w7, long_click: Keyboard_default_r, swipe_up: Keyboard_default_r, has_menu: BUTTON_4, hint: '埃的我'}
+      - {click: Return, width: *w7, long_click: Keyboard_mine, swipe_up: Keyboard_mine, has_menu: BUTTON_5, hint: '应何去', label: 'Etr'}
+      - {click: paste, width: *w7, long_click: undo, swipe_up: undo, has_menu: Page_Down, hint: '何从！'}
+  cosmos_svnpin_port_r:
+    name: '双键双拼'
+    author: '花蛄'
+    ascii_mode: 0
+    ascii_keyboard: cosmos_letter
+    width: *w6
+    keys:
+      #第一行
+      - {click: q, label: 'Q', hint: 'iu ia ua', long_click: '“”{Left}', swipe_up: '“”{Left}'}
+      - {click: e, label: 'E', hint: 'e uan', long_click: '《》{Left}', swipe_up: '《》{Left}'}
+      - {click: t, label: 'T', hint: 'ue ing uai', long_click: '……', swipe_up: '……'}
+      - {click: u, label: 'U', hint: 'u i', long_click: '！', swipe_up: '！'}
+      - {click: o, width: *w3, label: 'O', hint: 'o uo un', long_click: '@', swipe_up: '@'}
+      #第二行
+      - {click: a, label: 'A', hint: 'a ong iong', long_click: '1', swipe_up: '1'}
+      - {click: d, label: 'D', hint: 'en [iu]ang', long_click: '2', swipe_up: '2'}
+      - {click: g, label: 'G', hint: 'ang eng', long_click: '3', swipe_up: '3'}
+      - {click: j, label: 'J', hint: 'an ao', long_click: '4', swipe_up: '4'}
+      - {click: l, width: *w3, label: 'L', hint: 'ai', long_click: '5', swipe_up: '5'}
+      #第三行
+      - {click: x, label: 'X', hint: 'ei ie', long_click: '。', swipe_up: '。'}
+      - {click: c, label: 'C', hint: 'v iu iao', long_click: '，', swipe_up: '，'}
+      - {click: b, label: 'B', hint: 'in', long_click: '、', swipe_up: '、'}
+      - {click: m, label: 'M', hint: 'ian', long_click: '？', swipe_up: '？'}
+      - {click: BackSpace, width: *w3}
+      #第四行
+      - {click: Keyboard_letter, width: *w7, long_click: Keyboard_alpha, swipe_up: Keyboard_alpha, has_menu: Page_Up, hint: '在这茫'}
+      - {click: Keyboard_number, width: *w7, long_click: Keyboard_emoji, swipe_up: Keyboard_emoji, has_menu: BUTTON_1, hint: '茫的宇'}
+      - {click: Keyboard_punctuation, width: *w7, long_click: Keyboard_default_l, swipe_up: Keyboard_default_l, has_menu: BUTTON_2, hint: '宙中，'}
+      - {click: space, width: *w7, long_click: Schema_switch, swipe_up: Schema_switch, has_menu: BUTTON_3, hint: '如同尘'}
+      - {click: Keyboard_select, width: *w7, long_click: Keyboard_default, swipe_up: Keyboard_default, has_menu: BUTTON_4, hint: '埃的我'}
       - {click: Return, width: *w7, long_click: Keyboard_mine, swipe_up: Keyboard_mine, has_menu: BUTTON_5, hint: '应何去', label: 'Etr'}
       - {click: paste, width: *w7, long_click: undo, swipe_up: undo, has_menu: Page_Down, hint: '何从！'}
 
