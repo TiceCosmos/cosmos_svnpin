@@ -20,7 +20,7 @@ if __name__ == "__main__":
                 tmp = line_list[1] + biha_list[line_list[0]]
                 piyi_list[line_list[0] + line_list[1]] = tmp
                 line_list[1] = tmp
-                print("\t".join(line_list))
+                # print("\t".join(line_list))
     with open(sys.argv[3], "r") as fr:
         for line in fr:
             line_list = line.strip("\n").split("\t")
@@ -41,3 +41,5 @@ if __name__ == "__main__":
             if tmp_stat:
                 line_list[1] = " ".join(tmp_list)
                 print("\t".join(line_list))
+            else:
+                print("no: {}", line_list[0])
