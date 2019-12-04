@@ -50,11 +50,11 @@ preset_keys:
   Right: {repeatable: true}
   Shift_L: {label: 'Shift'}
   Shift_R: {label: 'Shift', send: Shift_R, shift_lock: click}
-  BUTTON_1: {label: '㇐', send: 'h'}
-  BUTTON_2: {label: '㇑', send: 's'}
-  BUTTON_3: {label: '丿', send: 'p'}
-  BUTTON_4: {label: '㇔', send: 'n'}
-  BUTTON_5: {label: '㇕', send: 'z'}
+  BUTTON_1: {label: '㇐', send: 'H'}
+  BUTTON_2: {label: '㇑', send: 'S'}
+  BUTTON_3: {label: '丿', send: 'P'}
+  BUTTON_4: {label: '㇔', send: 'N'}
+  BUTTON_5: {label: '㇕', send: 'Z'}
 
 preset_keyboards:
   cosmos_svnpin_land:
@@ -111,21 +111,21 @@ preset_keyboards:
     width: *w5
     keys:
       #第一行
-      - {click: q, label: 'Q', hint: 'iu ia ua', long_click: '“”{Left}', swipe_up: '“”{Left}'}
-      - {click: e, label: 'E', hint: 'e uan', long_click: '《》{Left}', swipe_up: '《》{Left}'}
-      - {click: t, label: 'T', hint: 'ue ing uai', long_click: '……', swipe_up: '……'}
-      - {click: u, label: 'U', hint: 'u i', long_click: '！', swipe_up: '！'}
-      - {click: o, label: 'O', hint: 'o uo un', long_click: '@', swipe_up: '@'}
+      - {click: q, label: 'Q　W', hint: 'iu ia ua', long_click: '“”{Left}', swipe_up: '“”{Left}'}
+      - {click: e, label: 'E　R', hint: 'e uan', long_click: '《》{Left}', swipe_up: '《》{Left}'}
+      - {click: t, label: 'T　Y', hint: 'ue ing uai', long_click: '……', swipe_up: '……'}
+      - {click: u, label: 'U　I', hint: 'u i', long_click: '！', swipe_up: '！'}
+      - {click: o, label: 'O　P', hint: 'o uo un', long_click: '@', swipe_up: '@'}
       #第二行
-      - {click: a, label: 'A', hint: 'a ong iong', long_click: '1', swipe_up: '1'}
-      - {click: d, label: 'D', hint: 'en [iu]ang', long_click: '2', swipe_up: '2'}
-      - {click: g, label: 'G', hint: 'ang eng', long_click: '3', swipe_up: '3'}
-      - {click: j, label: 'J', hint: 'an ao', long_click: '4', swipe_up: '4'}
+      - {click: a, label: 'A　S', hint: 'a ong iong', long_click: '1', swipe_up: '1'}
+      - {click: d, label: 'D　F', hint: 'en [iu]ang', long_click: '2', swipe_up: '2'}
+      - {click: g, label: 'G　H', hint: 'ang eng', long_click: '3', swipe_up: '3'}
+      - {click: j, label: 'J　K', hint: 'an ao', long_click: '4', swipe_up: '4'}
       - {click: l, label: 'L', hint: 'ai', long_click: '5', swipe_up: '5'}
       #第三行
-      - {click: x, label: 'X', hint: 'ei ie', long_click: '。', swipe_up: '。'}
-      - {click: c, label: 'C', hint: 'v iu iao', long_click: '，', swipe_up: '，'}
-      - {click: b, label: 'B', hint: 'in', long_click: '、', swipe_up: '、'}
+      - {click: x, label: 'Z　X', hint: 'ei ie', long_click: '。', swipe_up: '。'}
+      - {click: c, label: 'C　V', hint: 'v iu iao', long_click: '，', swipe_up: '，'}
+      - {click: b, label: 'B　N', hint: 'in', long_click: '、', swipe_up: '、'}
       - {click: m, label: 'M', hint: 'ian', long_click: '？', swipe_up: '？'}
       - {click: BackSpace}
       #第四行
@@ -144,23 +144,23 @@ preset_keyboards:
     width: *w6
     keys:
       #第一行
-      - {click: q, width: *w3, label: 'Q', hint: 'iu ia ua', long_click: '“”{Left}', swipe_up: '“”{Left}'}
-      - {click: e, label: 'E', hint: 'e uan', long_click: '《》{Left}', swipe_up: '《》{Left}'}
-      - {click: t, label: 'T', hint: 'ue ing uai', long_click: '……', swipe_up: '……'}
-      - {click: u, label: 'U', hint: 'u i', long_click: '！', swipe_up: '！'}
-      - {click: o, label: 'O', hint: 'o uo un', long_click: '@', swipe_up: '@'}
+      - {click: q, label: 'Q　W', hint: 'iu ia ua', long_click: '“”{Left}', swipe_up: '“”{Left}'}
+      - {click: e, label: 'E　R', hint: 'e uan', long_click: '《》{Left}', swipe_up: '《》{Left}'}
+      - {click: t, label: 'T　Y', hint: 'ue ing uai', long_click: '……', swipe_up: '……'}
+      - {click: u, label: 'U　I', hint: 'u i', long_click: '！', swipe_up: '！'}
+      - {click: o, width: *w3, label: 'O　　P', hint: 'o uo un', long_click: '@', swipe_up: '@'}
       #第二行
-      - {click: a, width: *w3, label: 'A', hint: 'a ong iong', long_click: '1', swipe_up: '1'}
-      - {click: d, label: 'D', hint: 'en [iu]ang', long_click: '2', swipe_up: '2'}
-      - {click: g, label: 'G', hint: 'ang eng', long_click: '3', swipe_up: '3'}
-      - {click: j, label: 'J', hint: 'an ao', long_click: '4', swipe_up: '4'}
-      - {click: l, label: 'L', hint: 'ai', long_click: '5', swipe_up: '5'}
+      - {click: a, label: 'A　S', hint: 'a ong iong', long_click: '1', swipe_up: '1'}
+      - {click: d, label: 'D　F', hint: 'en [iu]ang', long_click: '2', swipe_up: '2'}
+      - {click: g, label: 'G　H', hint: 'ang eng', long_click: '3', swipe_up: '3'}
+      - {click: j, label: 'J　K', hint: 'an ao', long_click: '4', swipe_up: '4'}
+      - {click: l, width: *w3, label: 'L', hint: 'ai', long_click: '5', swipe_up: '5'}
       #第三行
-      - {click: x, width: *w3, label: 'X', hint: 'ei ie', long_click: '。', swipe_up: '。'}
-      - {click: c, label: 'C', hint: 'v iu iao', long_click: '，', swipe_up: '，'}
-      - {click: b, label: 'B', hint: 'in', long_click: '、', swipe_up: '、'}
+      - {click: x, label: 'Z　X', hint: 'ei ie', long_click: '。', swipe_up: '。'}
+      - {click: c, label: 'C　V', hint: 'v iu iao', long_click: '，', swipe_up: '，'}
+      - {click: b, label: 'B　N', hint: 'in', long_click: '、', swipe_up: '、'}
       - {click: m, label: 'M', hint: 'ian', long_click: '？', swipe_up: '？'}
-      - {click: BackSpace}
+      - {click: BackSpace, width: *w3}
       #第四行
       - {click: Keyboard_letter, width: *w7, long_click: Keyboard_alpha, swipe_up: Keyboard_alpha, has_menu: Page_Up, hint: '在这茫'}
       - {click: Keyboard_number, width: *w7, long_click: Keyboard_emoji, swipe_up: Keyboard_emoji, has_menu: BUTTON_1, hint: '茫的宇'}
@@ -177,23 +177,23 @@ preset_keyboards:
     width: *w6
     keys:
       #第一行
-      - {click: q, label: 'Q', hint: 'iu ia ua', long_click: '“”{Left}', swipe_up: '“”{Left}'}
-      - {click: e, label: 'E', hint: 'e uan', long_click: '《》{Left}', swipe_up: '《》{Left}'}
-      - {click: t, label: 'T', hint: 'ue ing uai', long_click: '……', swipe_up: '……'}
-      - {click: u, label: 'U', hint: 'u i', long_click: '！', swipe_up: '！'}
-      - {click: o, width: *w3, label: 'O', hint: 'o uo un', long_click: '@', swipe_up: '@'}
+      - {click: q, width: *w3, label: 'Q　　W', hint: 'iu ia ua', long_click: '“”{Left}', swipe_up: '“”{Left}'}
+      - {click: e, label: 'E　R', hint: 'e uan', long_click: '《》{Left}', swipe_up: '《》{Left}'}
+      - {click: t, label: 'T　Y', hint: 'ue ing uai', long_click: '……', swipe_up: '……'}
+      - {click: u, label: 'U　I', hint: 'u i', long_click: '！', swipe_up: '！'}
+      - {click: o, label: 'O　P', hint: 'o uo un', long_click: '@', swipe_up: '@'}
       #第二行
-      - {click: a, label: 'A', hint: 'a ong iong', long_click: '1', swipe_up: '1'}
-      - {click: d, label: 'D', hint: 'en [iu]ang', long_click: '2', swipe_up: '2'}
-      - {click: g, label: 'G', hint: 'ang eng', long_click: '3', swipe_up: '3'}
-      - {click: j, label: 'J', hint: 'an ao', long_click: '4', swipe_up: '4'}
-      - {click: l, width: *w3, label: 'L', hint: 'ai', long_click: '5', swipe_up: '5'}
+      - {click: a, width: *w3, label: 'A　　S', hint: 'a ong iong', long_click: '1', swipe_up: '1'}
+      - {click: d, label: 'D　F', hint: 'en [iu]ang', long_click: '2', swipe_up: '2'}
+      - {click: g, label: 'G　H', hint: 'ang eng', long_click: '3', swipe_up: '3'}
+      - {click: j, label: 'J　K', hint: 'an ao', long_click: '4', swipe_up: '4'}
+      - {click: l, label: 'L', hint: 'ai', long_click: '5', swipe_up: '5'}
       #第三行
-      - {click: x, label: 'X', hint: 'ei ie', long_click: '。', swipe_up: '。'}
-      - {click: c, label: 'C', hint: 'v iu iao', long_click: '，', swipe_up: '，'}
-      - {click: b, label: 'B', hint: 'in', long_click: '、', swipe_up: '、'}
+      - {click: x, width: *w3, label: 'Z　　X', hint: 'ei ie', long_click: '。', swipe_up: '。'}
+      - {click: c, label: 'C　V', hint: 'v iu iao', long_click: '，', swipe_up: '，'}
+      - {click: b, label: 'B　N', hint: 'in', long_click: '、', swipe_up: '、'}
       - {click: m, label: 'M', hint: 'ian', long_click: '？', swipe_up: '？'}
-      - {click: BackSpace, width: *w3}
+      - {click: BackSpace}
       #第四行
       - {click: Keyboard_letter, width: *w7, long_click: Keyboard_alpha, swipe_up: Keyboard_alpha, has_menu: Page_Up, hint: '在这茫'}
       - {click: Keyboard_number, width: *w7, long_click: Keyboard_emoji, swipe_up: Keyboard_emoji, has_menu: BUTTON_1, hint: '茫的宇'}

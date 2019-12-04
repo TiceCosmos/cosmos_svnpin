@@ -11,41 +11,48 @@ schema:
   description:
     全键自然码双拼
 
-speller/algebra:
-  - xform/^([jqxy])u([HSPNZ]*)$/$1v$2/
-  - xform/^([aoe])ng/Y$1$1ng/
-  - xform/^([aoe])([ioun])/Y$1$1$2/
-  - xform/^([aoe])/Y$1$1/
-  - xform/^Y//
-  - xform/^zh/v/
-  - xform/^ch/i/
-  - xform/^sh/u/
-  - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])[iu]ang/$1d/
-  - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])i?ong/$1s/
-  - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ang/$1h/
-  - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])eng/$1g/
-  - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ing/$1y/
-  - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ian/$1m/
-  - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])iao/$1c/
-  - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])uai/$1y/
-  - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])uan/$1r/
-  - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ao/$1k/
-  - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ai/$1l/
-  - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])an/$1j/
-  - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ei/$1z/
-  - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])en/$1f/
-  - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])[iu]a/$1w/
-  - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ie/$1x/
-  - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])iu/$1q/
-  - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])in/$1n/
-  - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ou/$1b/
-  - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])uo/$1o/
-  - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ue/$1T/
-  - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ui/$1v/
-  - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])un/$1p/
-  - xform/^([qwertyuiopasdfghjklzxcvbnm]+)[HSPNZ]*/$1/
+speller:
+  algebra:
+    - xform/^([jqxy])u([HSPNZ]*)$/$1v$2/
+    - xform/^([aoe])ng/Y$1$1ng/
+    - xform/^([aoe])([ioun])/Y$1$1$2/
+    - xform/^([aoe])/Y$1$1/
+    - xform/^Y//
+    - xform/^zh/v/
+    - xform/^ch/i/
+    - xform/^sh/u/
+    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])[iu]ang/$1d/
+    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])i?ong/$1s/
+    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ang/$1h/
+    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])eng/$1g/
+    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ing/$1y/
+    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ian/$1m/
+    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])iao/$1c/
+    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])uai/$1y/
+    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])uan/$1r/
+    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ao/$1k/
+    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ai/$1l/
+    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])an/$1j/
+    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ei/$1z/
+    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])en/$1f/
+    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])[iu]a/$1w/
+    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ie/$1x/
+    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])iu/$1q/
+    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])in/$1n/
+    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ou/$1b/
+    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])uo/$1o/
+    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ue/$1T/
+    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ui/$1v/
+    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])un/$1p/
+    - xform/^([qwertyuiopasdfghjklzxcvbnm]+[HSPNZ][HSPNZ])[HSPNZ]*([HSPNZ])/$1$2/
+    - derive/^([qwertyuiopasdfghjklzxcvbnm]+)[HSPNZ]*/$1/
+    - derive/^([qwertyuiopasdfghjklzxcvbnm]+[HSPNZ])[HSPNZ]*/$1/
+    - derive/^([qwertyuiopasdfghjklzxcvbnm]+[HSPNZ][HSPNZ])[HSPNZ]*/$1/
 
-translator/prism: cosmos_svnpin_land
+translator:
+  prism: cosmos_svnpin_land
+  comment_format:
+    - xform/[HSPNZ]*/$1/
 
 style:
   key_height: 45

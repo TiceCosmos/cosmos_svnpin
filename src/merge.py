@@ -5,22 +5,23 @@ if __name__ == "__main__":
     import sys
     import numpy
 
-    bihua_list = {}
-    with open(sys.argv[3], "r") as fr:
+    word_list = numpy.loadtxt(open(sys.argv[1], encoding='utf8'), dtype=numpy.str, usecols=0)
+    biha_list ={}
+    with open(sys.argv[4], "r") as fr:
         for line in fr:
             line_list = line.strip("\n").split("\t")
-            if len(line_list) > 1 and (not line_list[0] in bihua_list):
-                bihua_list[line_list[0]] = line_list[1]
-    data_list = {}
-    with open(sys.argv[1], "r") as fr:
+            if len(line_list) > 1 and line_list[0] in word_list and (not line_list[0] in biha_list):
+                biha_list[line_list[0]] = line_list[1]
+    piyi_list = {}
+    with open(sys.argv[2], "r") as fr:
         for line in fr:
             line_list = line.strip("\n").split("\t")
-            if len(line_list) > 1 and line_list[0] in bihua_list:
-                tmp = line_list[1] + bihua_list[line_list[0]]
-                data_list[line_list[0] + line_list[1]] = tmp
+            if len(line_list) > 1 and line_list[0] in word_list and (not line_list[0] + line_list[1] in piyi_list):
+                tmp = line_list[1] + biha_list[line_list[0]]
+                piyi_list[line_list[0] + line_list[1]] = tmp
                 line_list[1] = tmp
                 print("\t".join(line_list))
-    with open(sys.argv[2], "r") as fr:
+    with open(sys.argv[3], "r") as fr:
         for line in fr:
             line_list = line.strip("\n").split("\t")
             if len(line_list) < 2:
@@ -33,9 +34,10 @@ if __name__ == "__main__":
             tmp_stat = True
             tmp_list = []
             for key in keys_list:
-                if not key in data_list:
+                if not key in piyi_list:
                     tmp_stat = False
                     break
-                tmp_list.append(data_list[key])
+                tmp_list.append(piyi_list[key])
             if tmp_stat:
-                print("{}\t{}".format(line_list[0], " ".join(tmp_list)))
+                line_list[1] = " ".join(tmp_list)
+                print("\t".join(line_list))

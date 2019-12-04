@@ -37,7 +37,7 @@ engine:
     - uniquifier
 
 speller:
-  alphabet: qwertyuiopasdfghjklzxcvbnm
+  alphabet: qwertyuiopasdfghjklzxcvbnmHSPNZ
   delimiter: " '"
   auto_select: false
   use_space: true
@@ -87,10 +87,10 @@ speller:
     - xform/[cv]/c/
     - xform/[bn]/b/
     - xform/[m]/m/
-    - xform/^([qwertyuiopasdfghjklzxcvbnm]+[HSPNZ])[HSPNZ]*([HSPNZ])/$1$2/
+    - xform/^([qwertyuiopasdfghjklzxcvbnm]+[HSPNZ][HSPNZ])[HSPNZ]*([HSPNZ])/$1$2/
     - derive/^([qwertyuiopasdfghjklzxcvbnm]+)[HSPNZ]*/$1/
     - derive/^([qwertyuiopasdfghjklzxcvbnm]+[HSPNZ])[HSPNZ]*/$1/
-    - xform/[HSPNZ]/[hspnz]/
+    - derive/^([qwertyuiopasdfghjklzxcvbnm]+[HSPNZ][HSPNZ])[HSPNZ]*/$1/
 
 translator:
   dictionary: cosmos_pinyin
@@ -111,5 +111,5 @@ key_binder:
 style:
   key_height: 60
   layout:
-    sticky_lines: 7
-    max_entries: 7
+    sticky_lines: 5
+    max_entries: 5

@@ -3,8 +3,8 @@
 all: schema/cosmos_pinyin.dict.yaml target/essay.txt
 schema/cosmos_pinyin.dict.yaml: src/head.txt target/merge.txt
 	@cat src/head.txt target/merge.txt > $@
-target/merge.txt: src/merge.py target/pinyin_word.txt target/pinyin_phrase.txt target/stroke.txt
-	@./src/merge.py target/pinyin_word.txt target/pinyin_phrase.txt target/stroke.txt > $@
+target/merge.txt: src/merge.py src/gb2312.txt target/pinyin_word.txt target/pinyin_phrase.txt target/stroke.txt
+	@./src/merge.py src/gb2312.txt target/pinyin_word.txt target/pinyin_phrase.txt target/stroke.txt > $@
 target/pinyin_word.txt: makefile target src/luna_pinyin.dict.yaml
 	@grep -P "^.\t" src/luna_pinyin.dict.yaml > $@
 target/pinyin_phrase.txt: makefile target src/luna_pinyin.dict.yaml
