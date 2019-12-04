@@ -22,6 +22,9 @@ style:
   key_text_size: 22
   key_long_text_size: 22
   label_text_size: 22
+  candidate_padding: 12
+  candidate_text_size: 22
+  candidate_view_height: 32
   layout:
     min_length: 1
     max_length: 100
@@ -50,11 +53,11 @@ preset_keys:
   Right: {repeatable: true}
   Shift_L: {label: 'Shift'}
   Shift_R: {label: 'Shift', send: Shift_R, shift_lock: click}
-  BUTTON_1: {label: '㇐', send: 'H'}
-  BUTTON_2: {label: '㇑', send: 'S'}
-  BUTTON_3: {label: '丿', send: 'P'}
+  BUTTON_1: {label: '㇐', send: 'C'}
+  BUTTON_2: {label: '㇑', send: 'V'}
+  BUTTON_3: {label: '丿', send: 'B'}
   BUTTON_4: {label: '㇔', send: 'N'}
-  BUTTON_5: {label: '㇕', send: 'Z'}
+  BUTTON_5: {label: '㇕', send: 'M'}
 
 preset_keyboards:
   cosmos_svnpin_land:
@@ -108,6 +111,7 @@ preset_keyboards:
     author: '花蛄'
     ascii_mode: 0
     ascii_keyboard: cosmos_letter
+    lock: true
     width: *w5
     keys:
       #第一行
@@ -119,13 +123,13 @@ preset_keyboards:
       #第二行
       - {click: a, label: 'A　S', hint: 'a ong iong', long_click: '1', swipe_up: '1'}
       - {click: d, label: 'D　F', hint: 'en [iu]ang', long_click: '2', swipe_up: '2'}
-      - {click: g, label: 'G　H', hint: 'ang eng', long_click: '3', swipe_up: '3'}
+      - {click: g, label: 'G　H', hint: 'eng ang', long_click: '3', swipe_up: '3'}
       - {click: j, label: 'J　K', hint: 'an ao', long_click: '4', swipe_up: '4'}
       - {click: l, label: 'L', hint: 'ai', long_click: '5', swipe_up: '5'}
       #第三行
-      - {click: x, label: 'Z　X', hint: 'ei ie', long_click: '。', swipe_up: '。'}
-      - {click: c, label: 'C　V', hint: 'v iu iao', long_click: '，', swipe_up: '，'}
-      - {click: b, label: 'B　N', hint: 'in', long_click: '、', swipe_up: '、'}
+      - {click: z, label: 'Z　X', hint: 'ei ie', long_click: '。', swipe_up: '。'}
+      - {click: c, label: 'C　V', hint: 'v ui iao', long_click: '，', swipe_up: '，'}
+      - {click: b, label: 'B　N', hint: 'ou in', long_click: '、', swipe_up: '、'}
       - {click: m, label: 'M', hint: 'ian', long_click: '？', swipe_up: '？'}
       - {click: BackSpace}
       #第四行
@@ -141,6 +145,7 @@ preset_keyboards:
     author: '花蛄'
     ascii_mode: 0
     ascii_keyboard: cosmos_letter
+    lock: true
     width: *w6
     keys:
       #第一行
@@ -152,13 +157,13 @@ preset_keyboards:
       #第二行
       - {click: a, label: 'A　S', hint: 'a ong iong', long_click: '1', swipe_up: '1'}
       - {click: d, label: 'D　F', hint: 'en [iu]ang', long_click: '2', swipe_up: '2'}
-      - {click: g, label: 'G　H', hint: 'ang eng', long_click: '3', swipe_up: '3'}
+      - {click: g, label: 'G　H', hint: 'eng ang', long_click: '3', swipe_up: '3'}
       - {click: j, label: 'J　K', hint: 'an ao', long_click: '4', swipe_up: '4'}
       - {click: l, width: *w3, label: 'L', hint: 'ai', long_click: '5', swipe_up: '5'}
       #第三行
-      - {click: x, label: 'Z　X', hint: 'ei ie', long_click: '。', swipe_up: '。'}
-      - {click: c, label: 'C　V', hint: 'v iu iao', long_click: '，', swipe_up: '，'}
-      - {click: b, label: 'B　N', hint: 'in', long_click: '、', swipe_up: '、'}
+      - {click: z, label: 'Z　X', hint: 'ei ie', long_click: '。', swipe_up: '。'}
+      - {click: c, label: 'C　V', hint: 'v ui iao', long_click: '，', swipe_up: '，'}
+      - {click: b, label: 'B　N', hint: 'ou in', long_click: '、', swipe_up: '、'}
       - {click: m, label: 'M', hint: 'ian', long_click: '？', swipe_up: '？'}
       - {click: BackSpace, width: *w3}
       #第四行
@@ -174,6 +179,7 @@ preset_keyboards:
     author: '花蛄'
     ascii_mode: 0
     ascii_keyboard: cosmos_letter
+    lock: true
     width: *w6
     keys:
       #第一行
@@ -185,13 +191,13 @@ preset_keyboards:
       #第二行
       - {click: a, width: *w3, label: 'A　　S', hint: 'a ong iong', long_click: '1', swipe_up: '1'}
       - {click: d, label: 'D　F', hint: 'en [iu]ang', long_click: '2', swipe_up: '2'}
-      - {click: g, label: 'G　H', hint: 'ang eng', long_click: '3', swipe_up: '3'}
+      - {click: g, label: 'G　H', hint: 'eng ang', long_click: '3', swipe_up: '3'}
       - {click: j, label: 'J　K', hint: 'an ao', long_click: '4', swipe_up: '4'}
       - {click: l, label: 'L', hint: 'ai', long_click: '5', swipe_up: '5'}
       #第三行
-      - {click: x, width: *w3, label: 'Z　　X', hint: 'ei ie', long_click: '。', swipe_up: '。'}
-      - {click: c, label: 'C　V', hint: 'v iu iao', long_click: '，', swipe_up: '，'}
-      - {click: b, label: 'B　N', hint: 'in', long_click: '、', swipe_up: '、'}
+      - {click: z, width: *w3, label: 'Z　　X', hint: 'ei ie', long_click: '。', swipe_up: '。'}
+      - {click: c, label: 'C　V', hint: 'v ui iao', long_click: '，', swipe_up: '，'}
+      - {click: b, label: 'B　N', hint: 'ou in', long_click: '、', swipe_up: '、'}
       - {click: m, label: 'M', hint: 'ian', long_click: '？', swipe_up: '？'}
       - {click: BackSpace}
       #第四行
