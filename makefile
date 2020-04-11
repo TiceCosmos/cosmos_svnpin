@@ -13,8 +13,8 @@ target/pinyin_word.txt: makefile target src/luna_pinyin.dict.yaml
 	@grep -P "^.\t" src/luna_pinyin.dict.yaml > $@
 target/pinyin_phrase.txt: makefile target src/luna_pinyin.dict.yaml
 	@grep -P "\t" src/luna_pinyin.dict.yaml | grep -v -P "^.\t" | opencc -c t2s > $@
-target/stroke.txt: makefile target src/stroke.dict.yaml
-	@cat src/stroke.dict.yaml | grep -P "^.\t" | sed 's/h/H/g;s/s/S/g;s/p/P/g;s/n/N/g;s/z/Z/g' | sort > $@
+target/stroke.txt: makefile target src/单字_笔顺码_29685个.txt
+	@cat src/单字_笔顺码_29685个.txt | awk '{print $$2,$$4}' | sed 's/1/H/g;s/2/S/g;s/3/P/g;s/4/N/g;s/5/Z/g;s/ /\t/g' > $@
 schema/essay.txt: makefile target src/essay.txt
 	@grep -P "\t" src/essay.txt | opencc -c t2s > $@
 target:

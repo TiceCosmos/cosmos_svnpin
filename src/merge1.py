@@ -38,4 +38,4 @@ if __name__ == "__main__":
                 tmp_list.append(piyi_list[key])
             if tmp_stat:
                 line_list[1] = " ".join(tmp_list)
-                print("\t".join(line_list))
+                print("\t".join(line_list[:2]))
