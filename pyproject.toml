@@ -1,0 +1,15 @@
+
+[tool.pyflow]
+name = "rime-svnpin"
+py_version = "3.9"
+version = "0.1.0"
+
+
+[tool.pyflow.scripts]
+
+
+[tool.pyflow.dependencies]
+pytoml = "^0.1.21"
+
+
+[tool.pyflow.dev-dependencies]

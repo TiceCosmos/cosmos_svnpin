@@ -1,46 +1,17 @@
 # Rime schema settings
 # encoding: utf-8
+__include: cosmos_svnpin_port.schema:/
 
 schema:
-  name: "双键双拼"
-  schema_id: cosmos_svnpin_port
-  version: "19.3"
+  name: "全键双拼"
+  schema_id: cosmos_svnpin_land
+  version: "2021.06.01"
   author:
     - 花蛄
-  description:
-    双键自然码双拼，适用于双拇指点击
-
-switches:
-  - name: simplification
-    reset: 0
-  - name: _hide_key_hint  
-    reset: 0
-
-engine:
-  processors:
-    - ascii_composer
-    - key_binder
-    - speller
-    - selector
-    - navigator
-    - express_editor
-  segmentors:
-    - ascii_segmentor
-    - abc_segmentor
-    - punct_segmentor
-    - fallback_segmentor
-  translators:
-    - echo_translator
-    - script_translator
-  filters:
-    - simplifier
-    - uniquifier
+  description: |
+    全键 + 自然码双拼 + 笔划辅助码
 
 speller:
-  alphabet: qwertyuiopasdfghjklzxcvbnmCVBNM
-  delimiter: " '"
-  auto_select: false
-  use_space: true
   algebra:
     - xform/^([jqxy])u([HSPNZ]*)$/$1v$2/
     - xform/^([aoe])ng/Y$1$1ng/
@@ -73,43 +44,20 @@ speller:
     - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ue/$1t/
     - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ui/$1v/
     - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])un/$1p/
-    - xform/[qw]/q/
-    - xform/[er]/e/
-    - xform/[ty]/t/
-    - xform/[ui]/u/
-    - xform/[op]/o/
-    - xform/[as]/a/
-    - xform/[df]/d/
-    - xform/[gh]/g/
-    - xform/[jk]/j/
-    - xform/[l]/l/
-    - xform/[zx]/z/
-    - xform/[cv]/c/
-    - xform/[bn]/b/
-    - xform/[m]/m/
-    - xform/^([qwertyuiopasdfghjklzxcvbnm]+[HSPNZ])[HSPNZ]*([HSPNZ])/$1$2/
+    - xform/^([qwertyuiopasdfghjklzxcvbnm]+[HSPNZ][HSPNZ])[HSPNZ]*([HSPNZ])/$1$2/
     - derive/^([qwertyuiopasdfghjklzxcvbnm]+)[HSPNZ]*/$1/
     - derive/^([qwertyuiopasdfghjklzxcvbnm]+[HSPNZ])[HSPNZ]*/$1/
+    - derive/^([qwertyuiopasdfghjklzxcvbnm]+[HSPNZ][HSPNZ])[HSPNZ]*/$1/
     - xlit/HSPNZ/CVBNM/
 
 translator:
-  dictionary: cosmos_pinyin
-  prism: cosmos_svnpin_port
-  enable_user_dict: true
-  spelling_hints: 10
+  prism: cosmos_svnpin_land
   comment_format:
-    - xform/([HSPNZ])[HSPNZ]*/$1/
-    - xform/H/㇐/
-    - xform/S/㇑/
-    - xform/P/丿/
-    - xform/N/㇔/
-    - xform/Z/𡿨/
-
-key_binder:
-  import_preset: default
+    - xform/[HSPNZ]*/$1/
 
 style:
   key_height: 60
   layout:
-    sticky_lines: 5
-    max_entries: 5
+    sticky_lines: 0
+    max_entries: 0
+  keyboards: [.default, cosmos_letter_land, cosmos_number_land]

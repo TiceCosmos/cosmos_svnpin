@@ -1,0 +1,12 @@
+﻿# Rime dictionary
+# encoding: utf-8
+# 码表结构：拼音＋笔画
+
+---
+name: cosmos_pinyin
+version: "2020.1.25"
+sort: by_weight
+use_preset_vocabulary: true
+vocabulary: essay-zh-hans
+---
+

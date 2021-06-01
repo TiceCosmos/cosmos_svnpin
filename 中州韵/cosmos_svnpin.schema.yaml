@@ -1,0 +1,149 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  name: "全键双拼"
+  schema_id: cosmos_sunpin
+  version: "2021.06.01"
+  author:
+    - 花蛄
+  description: |
+    自然码双拼 + 笔划辅助码
+  dependencies:
+    - stroke
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [中文, 西文]
+  - name: full_shape
+    states: [半角, 全角]
+  - name: simplification
+    states: [漢字, 汉字]
+  - name: ascii_punct
+    states: [。，, ．，]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - reverse_lookup_translator
+    - script_translator
+  filters:
+    - simplifier
+    - uniquifier
+
+speller:
+  alphabet: qwertyuiopasdfghjklzxcvbnmCVBNM
+  delimiter: " '"
+  algebra:
+    - xform/^([jqxy])u([HSPNZ]*)$/$1v$2/
+    - xform/^([aoe])ng/Y$1$1ng/
+    - xform/^([aoe])([iounr])/Y$1$2/
+    - xform/^([aoe])/Y$1$1/
+    - xform/^Y//
+    - xform/^zh/v/
+    - xform/^ch/i/
+    - xform/^sh/u/
+    - xform/^([a-z])[iu]ang/$1d/
+    - xform/^([a-z])i?ong/$1s/
+    - xform/^([a-z])ang/$1h/
+    - xform/^([a-z])eng/$1g/
+    - xform/^([a-z])ing/$1y/
+    - xform/^([a-z])ian/$1m/
+    - xform/^([a-z])iao/$1c/
+    - xform/^([a-z])uai/$1y/
+    - xform/^([a-z])uan/$1r/
+    - xform/^([a-z])ao/$1k/
+    - xform/^([a-z])ai/$1l/
+    - xform/^([a-z])an/$1j/
+    - xform/^([a-z])ei/$1z/
+    - xform/^([a-z])en/$1f/
+    - xform/^([a-z])[iu]a/$1w/
+    - xform/^([a-z])ie/$1x/
+    - xform/^([a-z])iu/$1q/
+    - xform/^([a-z])in/$1n/
+    - xform/^([a-z])ou/$1b/
+    - xform/^([a-z])uo/$1o/
+    - xform/^([a-z])ue/$1t/
+    - xform/^([a-z])ui/$1v/
+    - xform/^([a-z])un/$1p/
+    - xform/^([a-z]+[HSPNZ][HSPNZ])[HSPNZ]*([HSPNZ])/$1$2/
+    - derive/^([a-z]+)[HSPNZ]*/$1/
+    - derive/^([a-z]+[HSPNZ])[HSPNZ]*/$1/
+    - derive/^([a-z]+[HSPNZ][HSPNZ])[HSPNZ]*/$1/
+    - xlit/HSPNZ/CVBNM/
+
+translator:
+  dictionary: cosmos_pinyin
+  prism: cosmos_sunyin
+  preedit_format:
+    - xform/([bpmnljqxy])n/$1in/
+    - xform/(\w)g/$1eng/
+    - xform/(\w)q/$1iu/
+    - xform/([gkhvuirzcs])w/$1ua/
+    - xform/(\w)w/$1ia/
+    - xform/([dtnlgkhjqxyvuirzcs])r/$1uan/
+    - xform/(\w)t/$1ve/
+    - xform/([gkhvuirzcs])y/$1uai/
+    - xform/(\w)y/$1ing/
+    - xform/([dtnlgkhvuirzcs])o/$1uo/
+    - xform/(\w)p/$1un/
+    - xform/([jqx])s/$1iong/
+    - xform/(\w)s/$1ong/
+    - xform/([jqxnl])d/$1iang/
+    - xform/(\w)d/$1uang/
+    - xform/(\w)f/$1en/
+    - xform/(\w)h/$1ang/
+    - xform/(\w)j/$1an/
+    - xform/(\w)k/$1ao/
+    - xform/(\w)l/$1ai/
+    - xform/(\w)z/$1ei/
+    - xform/(\w)x/$1ie/
+    - xform/(\w)c/$1iao/
+    - xform/([dtgkhvuirzcs])v/$1ui/
+    - xform/(\w)b/$1ou/
+    - xform/(\w)m/$1ian/
+    - xform/([aoe])\1(\w)/$1$2/
+    - xform/(^|[ '])v/$1zh/
+    - xform/(^|[ '])i/$1ch/
+    - xform/(^|[ '])u/$1sh/
+    - xform/([jqxy])v/$1u/
+    - xform/([nl])v/$1ü/
+
+reverse_lookup:
+  dictionary: stroke
+  enable_completion: true
+  prefix: "`"
+  suffix: "'"
+  tips: 〔笔画〕
+  preedit_format:
+    - xlit/hspnz/一丨丿丶乙/
+  comment_format:
+    - xform/([nl])v/$1ü/
+
+punctuator:
+  import_preset: cosmos_symbol
+
+key_binder:
+  import_preset: default
+
+recognizer:
+  import_preset: default
+  patterns:
+    punct: "^([OS][0-9]{1,2}|[A-Za-z]+)$"
+    reverse_lookup: "`[a-z]*'?$"

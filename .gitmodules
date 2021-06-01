@@ -1,0 +1,12 @@
+[submodule "THUOCL"]
+	path = THUOCL
+	url = https://github.com/thunlp/THUOCL.git
+[submodule "rime-pinyin-simp"]
+	path = rime-pinyin-simp
+	url = https://github.com/rime/rime-pinyin-simp.git
+[submodule "rime-essay-simp"]
+	path = rime-essay-simp
+	url = https://github.com/rime/rime-essay-simp.git
+[submodule "rime-stroke"]
+	path = rime-stroke
+	url = https://github.com/rime/rime-stroke.git

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://dprint.dev/schemas/v0.json",
+  "projectType": "openSource",
+  "lineWidth": 120,
+  "includes": [
+    "**/*.json",
+    "**/*.md",
+    "**/*.py",
+    "**/*.toml"
+  ],
+  "excludes": [
+    "__pypackages__",
+    "target",
+    "rime-*"
+  ],
+  "plugins": [
+    "https://plugins.dprint.dev/json-0.11.0.wasm",
+    "https://plugins.dprint.dev/markdown-0.7.1.wasm",
+    "https://plugins.dprint.dev/yapf-0.2.0.exe-plugin@14c42b703709e81f813c6674a8110c522af0ea78b6298f4f73721121a1a03701",
+    "https://github.com/TiceCosmos/dprint-plugin-taplo/releases/download/0.5.4/taplo.exe-plugin@f85ab131f4ded20f6e70a6a113c7ca696835fbdadbe92f5375d7a79e3727dbdc"
+  ],
+  "yapf": {
+    "based_on_style": "pep8",
+    "spaces_before_comment": 4
+  }
+}
