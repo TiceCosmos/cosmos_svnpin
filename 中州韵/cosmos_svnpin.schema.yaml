@@ -3,7 +3,7 @@
 
 schema:
   name: "全键双拼"
-  schema_id: cosmos_sunpin
+  schema_id: cosmos_svnpin
   version: "2021.06.01"
   author:
     - 花蛄
