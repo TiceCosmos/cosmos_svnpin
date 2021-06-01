@@ -1,15 +1,13 @@
-
 [tool.pyflow]
-name = "rime-svnpin"
 py_version = "3.9"
-version = "0.1.0"
 
 
 [tool.pyflow.scripts]
+generate = "make:generate"
 
 
 [tool.pyflow.dependencies]
-pytoml = "^0.1.21"
+pyyaml = "^5.4.1"
 
 
 [tool.pyflow.dev-dependencies]

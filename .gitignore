@@ -1,7 +1,5 @@
 /target/
+/__pycache__/
 /__pypackages__/
 
 /pyflow.lock
-
-
-*~
