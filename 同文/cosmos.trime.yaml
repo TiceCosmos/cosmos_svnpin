@@ -481,21 +481,21 @@ preset_keyboards:
     width: *w3
     keys:
       # 行
-      - { click: "", label: "联系电话" }
-      - { click: "", label: "电子邮箱" }
-      - { click: "", label: "银行卡号" }
+      - click: ""
+      - click: ""
+      - click: ""
       # 行
-      - { click: "", label: "居住地址" }
-      - { click: "", label: "家庭地址" }
-      - { click: "", label: "工作地址" }
+      - click: ""
+      - click: ""
+      - click: ""
       # 行
-      - { click: "", label: "人生哲理" }
-      - { click: "", label: "宇宙奥秘" }
-      - { click: "", label: "生命渺小" }
+      - click: ""
+      - click: ""
+      - click: ""
       # 行
-      - { click: "", label: "..." }
-      - { click: "", label: "..." }
-      - { click: "", label: "..." }
+      - click: ""
+      - click: ""
+      - click: ""
       # 行
       - { click: Keyboard_default, width: *w7, hint: "在这茫" }
       - { click: Keyboard_letter_port, width: *w7, hint: "茫的宇" }
