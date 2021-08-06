@@ -43,36 +43,35 @@ speller:
   use_space: true
   algebra:
     - xform/^([jqxy])u([HSPNZ]*)$/$1v$2/
-    - xform/^([aoe])ng/Y$1$1ng/
-    - xform/^([aoe])([iounr])/Y$1$2/
-    - xform/^([aoe])/Y$1$1/
-    - xform/^Y//
+    - xform/^([mn])([HSPNZ]*)$/$1$1$2/
+    - xform/^([aoe])([HSPNZ]*)$/$1$1$2/
+    - xform/^([aoe])(ng[HSPNZ]*)$/$1$1$2/
     - xform/^zh/v/
     - xform/^ch/i/
     - xform/^sh/u/
-    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])[iu]ang/$1d/
-    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])i?ong/$1s/
-    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ang/$1h/
-    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])eng/$1g/
-    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ing/$1y/
-    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ian/$1m/
-    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])iao/$1c/
-    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])uai/$1y/
-    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])uan/$1r/
-    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ao/$1k/
-    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ai/$1l/
-    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])an/$1j/
-    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ei/$1z/
-    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])en/$1f/
-    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])[iu]a/$1w/
-    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ie/$1x/
-    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])iu/$1q/
-    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])in/$1n/
-    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ou/$1b/
-    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])uo/$1o/
-    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ue/$1t/
-    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])ui/$1v/
-    - xform/^([bpmfdtnlgkhjqxrzcsywviuaoe])un/$1p/
+    - xform/^([a-z])[iu]ang/$1d/
+    - xform/^([a-z])i?ong/$1s/
+    - xform/^([a-z])ang/$1h/
+    - xform/^([a-z])eng/$1g/
+    - xform/^([a-z])ing/$1y/
+    - xform/^([a-z])ian/$1m/
+    - xform/^([a-z])iao/$1c/
+    - xform/^([a-z])uai/$1y/
+    - xform/^([a-z])uan/$1r/
+    - xform/^([a-z])ao/$1k/
+    - xform/^([a-z])ai/$1l/
+    - xform/^([a-z])an/$1j/
+    - xform/^([a-z])ei/$1z/
+    - xform/^([a-z])en/$1f/
+    - xform/^([a-z])[iu]a/$1w/
+    - xform/^([a-z])ie/$1x/
+    - xform/^([a-z])iu/$1q/
+    - xform/^([a-z])in/$1n/
+    - xform/^([a-z])ou/$1b/
+    - xform/^([a-z])uo/$1o/
+    - xform/^([a-z])ue/$1t/
+    - xform/^([a-z])ui/$1v/
+    - xform/^([a-z])un/$1p/
     - xform/[we]/w/
     - xform/[rt]/r/
     - xform/[yu]/y/
@@ -83,10 +82,12 @@ speller:
     - xform/[l]/l/
     - xform/[xc]/x/
     - xform/[bn]/b/
-    - xform/^([qwertyuiopasdfghjklzxcvbnm]+[HSPNZ][HSPNZ])[HSPNZ]*([HSPNZ])/$1$2/
-    - derive/^([qwertyuiopasdfghjklzxcvbnm]+)[HSPNZ]*/$1/
-    - derive/^([qwertyuiopasdfghjklzxcvbnm]+[HSPNZ])[HSPNZ]*/$1/
-    - derive/^([qwertyuiopasdfghjklzxcvbnm]+[HSPNZ][HSPNZ])[HSPNZ]*/$1/
+    - xform/^([a-z]+[HSPNZ][HSPNZ])[HSPNZ]*([HSPNZ])/$1$2/
+    - erase/^[a-z]([HSPNZ]*)$/
+    - erase/^[a-z][a-z][a-z]+([HSPNZ]*)$/
+    - derive/^([a-z]+)[HSPNZ]*/$1/
+    - derive/^([a-z]+[HSPNZ])[HSPNZ]*/$1/
+    - derive/^([a-z]+[HSPNZ][HSPNZ])[HSPNZ]*/$1/
     - xlit/HSPNZ/CVBNM/
 
 translator:
@@ -96,11 +97,7 @@ translator:
   spelling_hints: 10
   comment_format:
     - xform/([HSPNZ])[HSPNZ]*/$1/
-    - xform/H/㇐/
-    - xform/S/㇑/
-    - xform/P/丿/
-    - xform/N/㇔/
-    - xform/Z/𡿨/
+    - xlit/HSPNZ/㇐㇑丿㇔𡿨/
 
 key_binder:
   import_preset: default

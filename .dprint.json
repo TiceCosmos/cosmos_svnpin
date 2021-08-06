@@ -1,7 +1,5 @@
 {
   "$schema": "https://dprint.dev/schemas/v0.json",
-  "projectType": "openSource",
-  "lineWidth": 120,
   "includes": [
     "**/*.json",
     "**/*.md",
@@ -10,6 +8,7 @@
   ],
   "excludes": [
     "__pypackages__",
+    "THUOCL",
     "target",
     "rime-*"
   ],
@@ -21,6 +20,7 @@
   ],
   "yapf": {
     "based_on_style": "pep8",
+    "column_limit": 120,
     "spaces_before_comment": 4
   }
 }
