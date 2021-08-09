@@ -18,6 +18,7 @@ width:
 
 style:
   locale: zh_CN
+  speech_opencc_config: none
   key_text_size: 22
   key_long_text_size: 22
   label_text_size: 22
@@ -54,17 +55,18 @@ preset_keys:
   Right: { repeatable: true }
   Shift_L: { label: "Sft", send: Shift_L }
   Shift_R: { label: "Sft", send: Shift_R, shift_lock: click }
-  BUTTON_1: { label: "㇐", send: "C" }
-  BUTTON_2: { label: "㇑", send: "V" }
+  BUTTON_1: { label: "一", send: "C" }
+  BUTTON_2: { label: "丨", send: "V" }
   BUTTON_3: { label: "丿", send: "B" }
-  BUTTON_4: { label: "㇔", send: "N" }
-  BUTTON_5: { label: "㇕", send: "M" }
+  BUTTON_4: { label: "丶", send: "N" }
+  BUTTON_5: { label: "𡿨", send: "M" }
 
 preset_keyboards:
   cosmos_svnpin_land:
     name: "全键双拼"
     ascii_mode: 0
     ascii_keyboard: cosmos_letter_land
+    lock: true
     keys:
       # 行
       - { click: "q", width: *w10, label: "Q", hint: "iu", long_click: "1", swipe_up: "1" }
@@ -100,7 +102,7 @@ preset_keyboards:
       - { click: Keyboard_letter_land, width: *w7, has_menu: Page_Up, hint: "在这茫" }
       - { click: Keyboard_number_land, width: *w7, has_menu: BUTTON_1, hint: "茫的宇" }
       - { click: select_all, width: *w7, has_menu: BUTTON_2, hint: "宙中，", label: "全" }
-      - { click: space, width: *w7, long_click: Schema_switch, swipe_up: Schema_switch, has_menu: BUTTON_3, hint: "如同尘" }
+      - { click: space, width: *w7, long_click: F4, swipe_up: F4, has_menu: BUTTON_3, hint: "如同尘" }
       - { click: cut, width: *w7, has_menu: BUTTON_4, hint: "埃的我", label: "剪" }
       - { click: Return, width: *w7, has_menu: BUTTON_5, hint: "应何去", label: "Etr" }
       - { click: paste, width: *w7, swipe_up: undo, has_menu: Page_Down, hint: "何从！" }
@@ -148,10 +150,40 @@ preset_keyboards:
       - { click: Keyboard_letter_port, width: *w7, long_click: Keyboard_alpha, swipe_up: Keyboard_alpha, has_menu: Page_Up, hint: "在这茫" }
       - { click: Keyboard_number_port, width: *w7, long_click: Keyboard_emoji_qx, swipe_up: Keyboard_emoji_qx, has_menu: BUTTON_1, hint: "茫的宇" }
       - { click: Keyboard_select, width: *w7, long_click: Left, swipe_up: Left, has_menu: BUTTON_2, hint: "宙中，" }
-      - { click: space, width: *w7, long_click: Schema_switch, swipe_up: Schema_switch, has_menu: BUTTON_3, hint: "如同尘" }
+      - { click: space, width: *w7, long_click: F4, swipe_up: F4, has_menu: BUTTON_3, hint: "如同尘" }
       - { click: Keyboard_punctuation, width: *w7, long_click: Right, swipe_up: Right, has_menu: BUTTON_4, hint: "埃的我" }
       - { click: Return, width: *w7, long_click: Keyboard_mine, swipe_up: Keyboard_mine, has_menu: BUTTON_5, hint: "应何去", label: "Etr" }
       - { click: paste, width: *w7, long_click: undo, swipe_up: undo, has_menu: Page_Down, hint: "何从！" }
+
+  cosmos_stroke:
+    name: "笔划键盘"
+    ascii_mode: 0
+    lock: true
+    width: *w5
+    keys:
+      # 行
+      - { click: "1", width: *w10 }
+      - { click: "2", width: *w10 }
+      - { click: "3", width: *w10 }
+      - { click: "4", width: *w10 }
+      - { click: "5", width: *w10 }
+      - { click: "6", width: *w10 }
+      - { click: "7", width: *w10 }
+      - { click: "8", width: *w10 }
+      - { click: "9", width: *w10 }
+      - { click: "0", width: *w10 }
+      # 行
+      - { click: "C", label: "一" }
+      - { click: "V", label: "丨" }
+      - { click: "B", label: "丿" }
+      - { click: "N", label: "丶" }
+      - { click: "M", label: "𡿨" }
+      # 行
+      - { click: Page_Up }
+      - { click: "'", label: "分" }
+      - { click: Schema_switch, label: "切方案" }
+      - { click: BackSpace }
+      - { click: Page_Down }
 
   cosmos_punctuation:
     name: "中文标点"

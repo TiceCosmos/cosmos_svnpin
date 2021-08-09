@@ -4,11 +4,7 @@
 schema:
   name: "双键双拼"
   schema_id: cosmos_svnpin_port
-  version: "2021.06.01"
-  author:
-    - 花蛄
-  description: |
-    双键 + 自然码双拼 + 笔划辅助码
+  description: 双键 + 自然码双拼 + 笔划辅助码
 
 switches:
   - name: simplification
@@ -97,7 +93,7 @@ translator:
   spelling_hints: 10
   comment_format:
     - xform/([HSPNZ])[HSPNZ]*/$1/
-    - xlit/HSPNZ/㇐㇑丿㇔𡿨/
+    - xlit/HSPNZ/一丨丿丶𡿨/
 
 key_binder:
   import_preset: default
