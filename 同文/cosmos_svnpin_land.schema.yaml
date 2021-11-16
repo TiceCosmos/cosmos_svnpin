@@ -51,7 +51,6 @@ translator:
   prism: cosmos_svnpin_land
 
 style:
-  key_height: 60
   layout:
     sticky_lines: 0
     max_entries: 0

@@ -99,8 +99,7 @@ key_binder:
   import_preset: default
 
 style:
-  key_height: 60
   layout:
     sticky_lines: 6
     max_entries: 6
-  keyboards: [.default, cosmos_punctuation, cosmos_letter_port, cosmos_number_port, cosmos_select, cosmos_alpha, cosmos_mine, cosmos_emoji_qx, cosmos_emoji_gx, cosmos_emoji_zz]
+  keyboards: [.default, cosmos_punctuation, cosmos_letter_port, cosmos_number_port, cosmos_select, cosmos_mine]
