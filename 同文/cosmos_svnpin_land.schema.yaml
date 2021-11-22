@@ -39,13 +39,12 @@ speller:
     - xform/^([a-z])ue/$1t/
     - xform/^([a-z])ui/$1v/
     - xform/^([a-z])un/$1p/
-    - xform/^([a-z]+[HSPNZ][HSPNZ])[HSPNZ]*([HSPNZ])/$1$2/
-    - erase/^[a-z]([HSPNZ]*)$/
-    - erase/^[a-z][a-z][a-z]+([HSPNZ]*)$/
-    - derive/^([a-z]+)[HSPNZ]*/$1/
-    - derive/^([a-z]+[HSPNZ])[HSPNZ]*/$1/
-    - derive/^([a-z]+[HSPNZ][HSPNZ])[HSPNZ]*/$1/
-    - xlit/HSPNZ/CVBNM/
+    - erase/^[a-z]([A-Z]*)$/
+    - erase/^[a-z][a-z][a-z]+([A-Z]*)$/
+    - xform/^([a-z]+[A-Z][A-Z])[A-Z]*([A-Z])/$1$2/
+    - derive/^([a-z]+)[A-Z]+/$1/
+    - derive/^([a-z]+[A-Z])[A-Z]+/$1/
+    - derive/^([a-z]+[A-Z][A-Z])[A-Z]+/$1/
 
 translator:
   prism: cosmos_svnpin_land

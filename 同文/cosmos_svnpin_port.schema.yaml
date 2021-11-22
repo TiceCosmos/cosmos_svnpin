@@ -68,23 +68,13 @@ speller:
     - xform/^([a-z])ue/$1t/
     - xform/^([a-z])ui/$1v/
     - xform/^([a-z])un/$1p/
-    - xform/[we]/w/
-    - xform/[rt]/r/
-    - xform/[yu]/y/
-    - xform/[io]/i/
-    - xform/[sd]/s/
-    - xform/[fg]/f/
-    - xform/[jk]/j/
-    - xform/[l]/l/
-    - xform/[xc]/x/
-    - xform/[bn]/b/
-    - xform/^([a-z]+[HSPNZ][HSPNZ])[HSPNZ]*([HSPNZ])/$1$2/
-    - erase/^[a-z]([HSPNZ]*)$/
-    - erase/^[a-z][a-z][a-z]+([HSPNZ]*)$/
-    - derive/^([a-z]+)[HSPNZ]*/$1/
-    - derive/^([a-z]+[HSPNZ])[HSPNZ]*/$1/
-    - derive/^([a-z]+[HSPNZ][HSPNZ])[HSPNZ]*/$1/
-    - xlit/HSPNZ/CVBNM/
+    - erase/^[a-z]([A-Z]*)$/
+    - erase/^[a-z][a-z][a-z]+([A-Z]*)$/
+    - xlit/qwertyuiopasdfghjklzxcvbnmHSPNZ/qwwrryyiipassffhjjlzxxvbbmCVBNM/
+    - xform/^([a-z]+[A-Z][A-Z])[A-Z]*([A-Z])/$1$2/
+    - derive/^([a-z]+)[A-Z]+/$1/
+    - derive/^([a-z]+[A-Z])[A-Z]+/$1/
+    - derive/^([a-z]+[A-Z][A-Z])[A-Z]+/$1/
 
 translator:
   dictionary: cosmos_pinyin
@@ -100,6 +90,6 @@ key_binder:
 
 style:
   layout:
-    sticky_lines: 6
-    max_entries: 6
+    sticky_lines: 4
+    max_entries: 4
   keyboards: [.default, cosmos_punctuation, cosmos_letter_port, cosmos_number_port, cosmos_select, cosmos_mine]

@@ -16,6 +16,9 @@ width:
   11: &w11 9.091
   12: &w12 8.334
 
+height:
+  1: &htool 50
+
 style:
   candidate_padding: 12
   candidate_text_size: 22
@@ -37,7 +40,7 @@ style:
     movable: false
 
 preset_keys:
-  liquid_keyboard_switch: { toggle: _liquid_keyboard, send: Mode_switch, states: [更多, 键盘] }
+  liquid_keyboard_switch: { toggle: _liquid_keyboard, send: Mode_switch, states: [附, 主] }
   Keyboard_default: { label: "汉", select: .default, send: Eisu_toggle }
   Keyboard_letter_land: { label: "英", select: cosmos_letter_land, send: Eisu_toggle }
   Keyboard_letter_port: { label: "英", select: cosmos_letter_port, send: Eisu_toggle }
@@ -45,7 +48,7 @@ preset_keys:
   Keyboard_number_port: { label: "数", select: cosmos_number_port, send: Eisu_toggle }
   Keyboard_punctuation: { label: "符", select: cosmos_punctuation, send: Eisu_toggle }
   Keyboard_select: { label: "控", select: cosmos_select, send: Eisu_toggle }
-  Keyboard_mine: { label: "定制", select: cosmos_mine, send: Eisu_toggle }
+  Keyboard_mine: { label: "定", select: cosmos_mine, send: Eisu_toggle }
   Hide: { label: "隐" }
   paste: { label: "贴" }
   undo: { label: "撤" }
@@ -61,6 +64,9 @@ preset_keys:
   BUTTON_3: { label: "丿", send: "B" }
   BUTTON_4: { label: "丶", send: "N" }
   BUTTON_5: { label: "𡿨", send: "M" }
+  Baidu: { label: 百度, command: run, option: "https://www.baidu.com/s?wd=%s" }
+  Bing: { label: 必应, command: run, option: "https://cn.bing.com/search?q=%s" }
+  Github: { label: Github, command: run, option: "https://github.com/search?q=%s" }
 
 preset_keyboards:
   cosmos_svnpin_land:
@@ -94,30 +100,30 @@ preset_keyboards:
       # 行
       - { click: "a", width: *w9, label: "A", hint: "a", long_click: "“”{Left}", swipe_up: "“”{Left}" }
       - { click: "s", width: *w9, label: "S", hint: "ong iong", long_click: "‘’{Left}", swipe_up: "‘’{Left}" }
-      - { click: "d", width: *w9, label: "D", hint: "iang uang", long_click: "（）{Left}", swipe_up: "（）{Left}" }
-      - { click: "f", width: *w9, label: "F", hint: "en", long_click: "《》{Left}", swipe_up: "《》{Left}" }
-      - { click: "g", width: *w9, label: "G", hint: "eng", long_click: "￥", swipe_up: "￥" }
-      - { click: "h", width: *w9, label: "H", hint: "ang", long_click: "·", swipe_up: "·" }
-      - { click: "j", width: *w9, label: "J", hint: "an", long_click: "——", swipe_up: "——" }
-      - { click: "k", width: *w9, label: "K", hint: "ao", long_click: "……", swipe_up: "……" }
-      - { click: "l", width: *w9, label: "L", hint: "ai", long_click: "～", swipe_up: "～" }
+      - { click: "d", width: *w9, label: "D", hint: "iang uang", long_click: "《》{Left}", swipe_up: "《》{Left}" }
+      - { click: "f", width: *w9, label: "F", hint: "en", long_click: "￥", swipe_up: "￥" }
+      - { click: "g", width: *w9, label: "G", hint: "eng", long_click: "·", swipe_up: "·" }
+      - { click: "h", width: *w9, label: "H", hint: "ang", long_click: "——", swipe_up: "——" }
+      - { click: "j", width: *w9, label: "J", hint: "an", long_click: "……", swipe_up: "……" }
+      - { click: "k", width: *w9, label: "K", hint: "ao", long_click: "～", swipe_up: "～" }
+      - { click: "l", width: *w9, label: "L", hint: "ai", long_click: "：", swipe_up: "：" }
       # 行
-      - { click: "z", width: *w8, label: "Z", hint: "ei", long_click: "。", swipe_up: "。" }
-      - { click: "x", width: *w8, label: "X", hint: "ie", long_click: "，", swipe_up: "，" }
-      - { click: "c", width: *w8, label: "C", hint: "iao", long_click: "、", swipe_up: "、" }
-      - { click: "v", width: *w8, label: "V", hint: "v ui", long_click: "；", swipe_up: "；" }
-      - { click: "b", width: *w8, label: "B", hint: "ou", long_click: "：", swipe_up: "：" }
-      - { click: "n", width: *w8, label: "N", hint: "in", long_click: "！", swipe_up: "！" }
-      - { click: "m", width: *w8, label: "M", hint: "ian", long_click: "?", swipe_up: "?" }
-      - { click: BackSpace, width: *w8, swipe_up: "@" }
+      - { click: "z", width: *w8, label: "Z", hint: "ei", long_click: "@", swipe_up: "@" }
+      - { click: "x", width: *w8, label: "X", hint: "ie", long_click: "！", swipe_up: "！" }
+      - { click: "c", width: *w8, label: "C", hint: "iao", long_click: "？", swipe_up: "？" }
+      - { click: "v", width: *w8, label: "V", hint: "v ui", long_click: "。", swipe_up: "。" }
+      - { click: "b", width: *w8, label: "B", hint: "ou", long_click: "，", swipe_up: "，" }
+      - { click: "n", width: *w8, label: "N", hint: "in", long_click: "、", swipe_up: "、" }
+      - { click: "m", width: *w8, label: "M", hint: "ian", long_click: "：", swipe_up: "：" }
+      - { click: BackSpace, width: *w8 }
       # 行
-      - { click: Keyboard_letter_land, width: *w7, has_menu: Page_Up, hint: "在这茫" }
+      - { click: Keyboard_letter_land, width: *w7, height: *htool, has_menu: Page_Up, hint: "在这茫" }
       - { click: Keyboard_number_land, width: *w7, has_menu: BUTTON_1, hint: "茫的宇" }
-      - { click: select_all, width: *w7, has_menu: BUTTON_2, hint: "宙中，", label: "全" }
+      - { click: liquid_keyboard_switch, width: *w7, has_menu: BUTTON_2, hint: "宙中，" }
       - { click: space, width: *w7, long_click: F4, swipe_up: F4, has_menu: BUTTON_3, hint: "如同尘" }
-      - { click: cut, width: *w7, has_menu: BUTTON_4, hint: "埃的我", label: "剪" }
-      - { click: Return, width: *w7, has_menu: BUTTON_5, hint: "应何去", label: "Etr" }
-      - { click: paste, width: *w7, swipe_up: undo, has_menu: Page_Down, hint: "何从！" }
+      - { click: paste, width: *w7, has_menu: BUTTON_4, hint: "埃的我" }
+      - { click: Return, width: *w7, has_menu: BUTTON_5, hint: "应何去" }
+      - { click: undo, width: *w7, has_menu: Page_Down, hint: "何从！" }
 
   cosmos_svnpin_port:
     name: "双键双拼"
@@ -134,19 +140,19 @@ preset_keyboards:
       - { click: "9", width: *w6 }
       - { click: "0", width: *w6 }
       # 行
-      - { click: q, label: "Q", hint: "iu", long_click: "{Keyboard_letter_port}https://{Keyboard_default}", swipe_up: "{Keyboard_letter_port}https://{Keyboard_default}" }
+      - { click: q, label: "Q", hint: "iu", long_click: "{Mode_switch}https://{Mode_switch}", swipe_up: "{Mode_switch}https://{Mode_switch}" }
       - { click: w, label: "W　E", hint: "ia ua e", long_click: "1", swipe_up: "1" }
       - { click: r, label: "R　T", hint: "uan ue ", long_click: "2", swipe_up: "2" }
       - { click: y, label: "Y　U", hint: "ing uai u", long_click: "3", swipe_up: "3" }
       - { click: i, label: "I　O", hint: "i o uo", long_click: "4", swipe_up: "4" }
-      - { click: p, label: "P", hint: "un", long_click: "{Keyboard_letter_port}.com{Keyboard_default}", swipe_up: "{Keyboard_letter_port}.com{Keyboard_default}" }
+      - { click: p, label: "P", hint: "un", long_click: "{Mode_switch}.com{Mode_switch}", swipe_up: "{Mode_switch}.com{Mode_switch}" }
       # 行
-      - { click: a, label: "A", hint: "a", long_click: "{Keyboard_letter_port}www.{Keyboard_default}", swipe_up: "{Keyboard_letter_port}www.{Keyboard_default}" }
+      - { click: a, label: "A", hint: "a", long_click: "{Mode_switch}www.{Mode_switch}", swipe_up: "{Mode_switch}www.{Mode_switch}" }
       - { click: s, label: "S　D", hint: "ong [iu]_ng", long_click: "1", swipe_up: "1" }
       - { click: f, label: "F　G", hint: "en eng", long_click: "2", swipe_up: "2" }
       - { click: h, label: "H", hint: "ang", long_click: "3", swipe_up: "3" }
       - { click: j, label: "J　K", hint: "an ao", long_click: "4", swipe_up: "4" }
-      - { click: l, label: "L", hint: "ai", long_click: "{Keyboard_letter_port}.cn{Keyboard_default}", swipe_up: "{Keyboard_letter_port}.cn{Keyboard_default}" }
+      - { click: l, label: "L", hint: "ai", long_click: "{Mode_switch}.cn{Mode_switch}", swipe_up: "{Mode_switch}.cn{Mode_switch}" }
       # 行
       - { click: z, label: "Z", hint: "ei", long_click: "@", swipe_up: "@" }
       - { click: x, label: "X　C", hint: "ie iao", long_click: "？", swipe_up: "？" }
@@ -155,7 +161,7 @@ preset_keyboards:
       - { click: m, label: "M", hint: "ian", long_click: "、", swipe_up: "、" }
       - { click: BackSpace, swipe_up: "￥" }
       # 行
-      - { click: Keyboard_letter_port, width: *w7, long_click: Color_settings, swipe_up: Color_settings, has_menu: Page_Up, hint: "在这茫" }
+      - { click: Keyboard_letter_port, width: *w7, height: *htool, long_click: Color_settings, swipe_up: Color_settings, has_menu: Page_Up, hint: "在这茫" }
       - { click: Keyboard_number_port, width: *w7, long_click: Keyboard_mine, swipe_up: Keyboard_mine, has_menu: BUTTON_1, hint: "茫的宇" }
       - { click: Keyboard_select, width: *w7, long_click: Left, swipe_up: Left, has_menu: BUTTON_2, hint: "宙中，" }
       - { click: space, width: *w7, long_click: F4, swipe_up: F4, has_menu: BUTTON_3, hint: "如同尘" }
@@ -163,43 +169,11 @@ preset_keyboards:
       - { click: Return, width: *w7, long_click: liquid_keyboard_switch, swipe_up: liquid_keyboard_switch, has_menu: BUTTON_5, hint: "应何去", label: "Etr" }
       - { click: paste, width: *w7, long_click: DeleteCandidate, swipe_up: DeleteCandidate, has_menu: Page_Down, hint: "何从！" }
 
-  cosmos_stroke:
-    name: "笔划键盘"
-    key_height: 100
+  cosmos_jiugong_pinyin:
+    name: "九宫拼音"
     ascii_mode: 0
     lock: true
     width: *w5
-    keys:
-      # 行
-      - { click: "1" }
-      - { click: "2" }
-      - { click: "3" }
-      - { click: "4" }
-      - { click: "5" }
-      - { click: "6" }
-      - { click: "7" }
-      - { click: "8" }
-      - { click: "9" }
-      - { click: "0" }
-      # 行
-      - { click: "C", width: *w3, label: "一" }
-      - { click: "V", width: *w3, label: "丨" }
-      - { click: "B", width: *w3, label: "丿" }
-      - { click: "N", width: *w3, label: "丶" }
-      - { click: "M", width: *w3, label: "𡿨" }
-      - { click: BackSpace, width: *w3 }
-      # 行
-      - { click: Page_Up }
-      - { click: "'", label: "分" }
-      - { click: Schema_switch, label: "切方案" }
-      - { click: "'", label: "分" }
-      - { click: Page_Down }
-
-  cosmos_punctuation:
-    name: "中文标点"
-    ascii_mode: 0
-    ascii_keyboard: cosmos_letter_port
-    width: *w6
     keys:
       # 行
       - { click: "1", width: *w10 }
@@ -212,6 +186,77 @@ preset_keyboards:
       - { click: "8", width: *w10 }
       - { click: "9", width: *w10 }
       - { click: "0", width: *w10 }
+      # 行
+      - { click: "？" }
+      - { click: "'", label: "分" }
+      - { click: b, label: "ABC" }
+      - { click: d, label: "DEF" }
+      - { click: "、" }
+      # 行
+      - { click: "。" }
+      - { click: g, label: "GHI" }
+      - { click: j, label: "JKL" }
+      - { click: m, label: "MNO" }
+      - { click: "，" }
+      # 行
+      - { click: "@" }
+      - { click: p, label: "PQRS" }
+      - { click: t, label: "TUV" }
+      - { click: w, label: "WXYZ" }
+      - { click: BackSpace }
+      # 行
+      - { click: Keyboard_letter_port, width: *w7, height: *htool, long_click: Color_settings, swipe_up: Color_settings, has_menu: Page_Up, hint: "在这茫" }
+      - { click: Keyboard_number_port, width: *w7, long_click: Keyboard_mine, swipe_up: Keyboard_mine, has_menu: BUTTON_1, hint: "茫的宇" }
+      - { click: Keyboard_select, width: *w7, long_click: Left, swipe_up: Left, has_menu: BUTTON_2, hint: "宙中，" }
+      - { click: space, width: *w7, long_click: F4, swipe_up: F4, has_menu: BUTTON_3, hint: "如同尘" }
+      - { click: Keyboard_punctuation, width: *w7, long_click: Right, swipe_up: Right, has_menu: BUTTON_4, hint: "埃的我" }
+      - { click: Return, width: *w7, long_click: liquid_keyboard_switch, swipe_up: liquid_keyboard_switch, has_menu: BUTTON_5, hint: "应何去", label: "Etr" }
+      - { click: paste, width: *w7, long_click: DeleteCandidate, swipe_up: DeleteCandidate, has_menu: Page_Down, hint: "何从！" }
+
+  cosmos_stroke:
+    name: "笔划键盘"
+    ascii_mode: 0
+    lock: true
+    width: *w5
+    keys:
+      # 行
+      - { click: "5", width: *w6 }
+      - { click: "6", width: *w6 }
+      - { click: "7", width: *w6 }
+      - { click: "8", width: *w6 }
+      - { click: "9", width: *w6 }
+      - { click: "0", width: *w6 }
+      - { click: "1", width: *w4 }
+      - { click: "2", width: *w4 }
+      - { click: "3", width: *w4 }
+      - { click: "4", width: *w4 }
+      # 行
+      - { click: "C", width: *w3, label: "一" }
+      - { click: "V", width: *w3, label: "丨" }
+      - { click: "B", width: *w3, label: "丿" }
+      - { click: "N", width: *w3, label: "丶" }
+      - { click: "M", width: *w3, label: "𡿨" }
+      - { click: BackSpace, width: *w3 }
+      # 行
+      - { click: Page_Up, height: *htool }
+      - { click: "'", label: "分" }
+      - { click: Schema_switch, label: "切方案" }
+      - { click: "'", label: "分" }
+      - { click: Page_Down }
+
+  cosmos_punctuation:
+    name: "中文标点"
+    ascii_mode: 0
+    ascii_keyboard: cosmos_letter_port
+    width: *w6
+    keys:
+      # 行
+      - { click: "⊱⊰{Left}", long_click: "ɛɜ{Left}", swipe_up: "ɛɜ{Left}" }
+      - { click: "⚞⚟{Left}", long_click: "⋛⋚{Left}", swipe_up: "⋛⋚{Left}" }
+      - { click: "⋋⋌{Left}", long_click: "⋟⋞{Left}", swipe_up: "⋟⋞{Left}" }
+      - { click: "ཌད{Left}", long_click: "༼༽{Left}", swipe_up: "༼༽{Left}" }
+      - { click: "⋱⋰{Left}", long_click: "༺༻{Left}", swipe_up: "༺༻{Left}" }
+      - { click: "☜☞{Left}", long_click: "☚☛{Left}", swipe_up: "☚☛{Left}" }
       # 行
       - { click: "《》{Left}", long_click: "〈〉{Left}", swipe_up: "〈〉{Left}" }
       - { click: "（）{Left}", long_click: "｟｠{Left}", swipe_up: "｟｠{Left}" }
@@ -234,7 +279,7 @@ preset_keyboards:
       - { click: "、" }
       - { click: "￥", long_click: "¥", swipe_up: "¥" }
       # 行
-      - { click: Keyboard_default, width: *w7, hint: "在这茫" }
+      - { click: Keyboard_default, width: *w7, height: *htool, hint: "在这茫" }
       - { click: Keyboard_letter_port, width: *w7, hint: "茫的宇" }
       - { click: Keyboard_select, width: *w7, hint: "宙中，" }
       - { click: space, width: *w7, hint: "如同尘" }
@@ -289,9 +334,9 @@ preset_keyboards:
       - { click: "m", width: *w9, long_click: "?", swipe_up: "?" }
       - { click: Shift_R, width: *w9 }
       # 行
-      - { click: Keyboard_default, width: *w7, hint: "在这茫" }
+      - { click: Keyboard_default, width: *w7, height: *htool, hint: "在这茫" }
       - { click: Keyboard_number_land, width: *w7, long_click: "<", swipe_up: "<", hint: "茫的宇" }
-      - { click: undo, width: *w7, long_click: "+", swipe_up: "+", hint: "宙中，" }
+      - { click: liquid_keyboard_switch, width: *w7, long_click: "+", swipe_up: "+", hint: "宙中，" }
       - { click: space, width: *w7, long_click: "=", swipe_up: "=", hint: "如同尘" }
       - { click: paste, width: *w7, long_click: "-", swipe_up: "-", hint: "埃的我" }
       - { click: Return, width: *w7, long_click: ">", swipe_up: ">", hint: "应何去" }
@@ -344,7 +389,7 @@ preset_keyboards:
       - { click: "m", width: *w9, long_click: "?", swipe_up: "?" }
       - { click: Shift_R, width: *w9 }
       # 行
-      - { click: Keyboard_default, width: *w7, hint: "在这茫" }
+      - { click: Keyboard_default, width: *w7, height: *htool, hint: "在这茫" }
       - { click: Keyboard_number_port, width: *w7, long_click: "<", swipe_up: "<", hint: "茫的宇" }
       - { click: Keyboard_select, width: *w7, long_click: "+", swipe_up: "+", hint: "宙中，" }
       - { click: space, width: *w7, long_click: "=", swipe_up: "=", hint: "如同尘" }
@@ -358,46 +403,43 @@ preset_keyboards:
     width: *w7
     keys:
       # 行
-      - { click: "1", width: *w10 }
-      - { click: "2", width: *w10 }
-      - { click: "3", width: *w10 }
-      - { click: "4", width: *w10 }
-      - { click: "5", width: *w10 }
-      - { click: "6", width: *w10 }
-      - { click: "7", width: *w10 }
-      - { click: "8", width: *w10 }
-      - { click: "9", width: *w10 }
-      - { click: "0", width: *w10 }
-      # 行
-      - { click: Home, label: "首" }
+      - { click: Home }
       - { click: Up }
-      - { click: End, label: "尾" }
+      - { click: End }
+      - { click: cut_all }
       - { click: "1", long_click: "壹", swipe_up: "壹" }
       - { click: "2", long_click: "贰", swipe_up: "贰" }
       - { click: "3", long_click: "叁", swipe_up: "叁" }
-      - { click: "." }
       # 行
       - { click: Left }
-      - { click: Shift_R, long_click: select_all, swipe_up: select_all }
+      - { click: Shift_R, label: "选择" }
       - { click: Right }
+      - { click: select_all }
       - { click: "4", long_click: "肆", swipe_up: "肆" }
       - { click: "5", long_click: "伍", swipe_up: "伍" }
       - { click: "6", long_click: "陆", swipe_up: "陆" }
-      - { click: "0", long_click: "零", swipe_up: "零" }
       # 行
-      - { click: undo, label: "撤" }
+      - { click: cut }
       - { click: Down }
-      - { click: redo, label: "归" }
+      - { click: copy }
+      - { click: undo, label: "撤消" }
       - { click: "7", long_click: "柒", swipe_up: "柒" }
       - { click: "8", long_click: "捌", swipe_up: "捌" }
       - { click: "9", long_click: "玖", swipe_up: "玖" }
-      - { click: paste }
       # 行
-      - { click: Keyboard_default, width: *w7, hint: "在这茫" }
-      - { click: Keyboard_letter_port, width: *w7, hint: "茫的宇" }
-      - { click: copy, width: *w7, hint: "宙中，", label: "复" }
+      - { click: ChineseDate }
+      - { click: Date }
+      - { click: Time }
+      - { click: redo }
+      - { click: "." }
+      - { click: "0", long_click: "零", swipe_up: "零" }
+      - { click: "/" }
+      # 行
+      - { click: Keyboard_default, width: *w7, height: *htool, hint: "在这茫" }
+      - { click: Keyboard_letter_land, width: *w7, hint: "茫的宇" }
+      - { click: liquid_keyboard_switch, width: *w7, hint: "宙中，" }
       - { click: space, width: *w7, hint: "如同尘" }
-      - { click: cut, width: *w7, hint: "埃的我", label: "剪" }
+      - { click: paste, width: *w7, hint: "埃的我" }
       - { click: Return, width: *w7, hint: "应何去" }
       - { click: BackSpace, width: *w7, hint: "何从！" }
 
@@ -419,19 +461,19 @@ preset_keyboards:
       - { click: "6", width: 23.077, long_click: "陆", swipe_up: "陆" }
       - { click: "÷", width: 15.384 }
       # 行
-      - { click: ".", width: 15.384 }
+      - { click: "%", width: 15.384 }
       - { click: "7", width: 23.077, long_click: "柒", swipe_up: "柒" }
       - { click: "8", width: 23.077, long_click: "捌", swipe_up: "捌" }
       - { click: "9", width: 23.077, long_click: "玖", swipe_up: "玖" }
       - { click: "=", width: 15.384 }
       # 行
-      - { click: "$", width: 15.384, long_click: "￥", swipe_up: "￥" }
-      - { click: "*", width: 23.077 }
+      - { click: "@", width: 15.384 }
+      - { click: ".", width: 23.077 }
       - { click: "0", width: 23.077, long_click: "零", swipe_up: "零" }
-      - { click: "#", width: 23.077 }
-      - { click: "%", width: 15.384 }
+      - { click: "/", width: 23.077 }
+      - { click: "$", width: 15.384, long_click: "￥", swipe_up: "￥" }
       # 行
-      - { click: Keyboard_default, width: *w7, hint: "在这茫" }
+      - { click: Keyboard_default, width: *w7, height: *htool, hint: "在这茫" }
       - { click: Keyboard_letter_port, width: *w7, hint: "茫的宇" }
       - { click: Keyboard_select, width: *w7, hint: "宙中，" }
       - { click: space, width: *w7, hint: "如同尘" }
@@ -445,16 +487,12 @@ preset_keyboards:
     width: *w5
     keys:
       # 行
-      - { click: "1", width: *w10 }
-      - { click: "2", width: *w10 }
-      - { click: "3", width: *w10 }
-      - { click: "4", width: *w10 }
-      - { click: "5", width: *w10 }
-      - { click: "6", width: *w10 }
-      - { click: "7", width: *w10 }
-      - { click: "8", width: *w10 }
-      - { click: "9", width: *w10 }
-      - { click: "0", width: *w10 }
+      - { click: ChineseDate, width: *w6 }
+      - { click: Date, width: *w6 }
+      - { click: Time, width: *w6 }
+      - { click: Baidu, width: *w6 }
+      - { click: Bing, width: *w6 }
+      - { click: Github, width: *w6 }
       # 行
       - { click: cut_all }
       - { click: Home }
@@ -468,13 +506,13 @@ preset_keyboards:
       - { click: Right }
       - { click: copy }
       # 行
-      - { click: share_text, label: "分享" }
+      - { click: Clear }
       - { click: undo, label: "撤销" }
       - { click: Down }
       - { click: redo }
       - { click: paste, label: "粘贴" }
       # 行
-      - { click: Keyboard_default, width: *w7, hint: "在这茫" }
+      - { click: Keyboard_default, width: *w7, height: *htool, hint: "在这茫" }
       - { click: Keyboard_letter_port, width: *w7, hint: "茫的宇" }
       - { click: Keyboard_number_port, width: *w7, hint: "宙中，" }
       - { click: space, width: *w7, hint: "如同尘" }
@@ -505,7 +543,7 @@ preset_keyboards:
       - click: ""
       - click: ""
       # 行
-      - { click: Keyboard_default, width: *w7, hint: "在这茫" }
+      - { click: Keyboard_default, width: *w7, height: *htool, hint: "在这茫" }
       - { click: Keyboard_letter_port, width: *w7, hint: "茫的宇" }
       - { click: Keyboard_select, width: *w7, hint: "宙中，" }
       - { click: space, width: *w7, hint: "如同尘" }
@@ -544,17 +582,6 @@ preset_keyboards:
       - { click: "辛", long_click: "重光", swipe_up: "重光" }
       - { click: "壬", long_click: "玄黓", swipe_up: "玄黓" }
       - { click: "癸", long_click: "昭阳", swipe_up: "昭阳" }
-      # 翅膀
 
 liquid_keyboard:
-  keyboards: [exit, clipboard, unit, math, symbol, grease, group]
-  group:
-    type: SINGLE
-    name: 组合
-    keys:
-      - { click: "⊱⊰" }
-      - { click: "⚞⚟" }
-      - { click: "⋋⋌" }
-      - { click: "⋛⋚" }
-      - { click: "༺༻" }
-      - { click: "꧁꧂" }
+  keyboards: [exit, clipboard, unit, math, symbol, grease]

@@ -16,7 +16,4 @@ translator:
   prism: cosmos_stroke
 
 style:
-  layout:
-    sticky_lines: 6
-    max_entries: 6
   keyboards: [.default]
