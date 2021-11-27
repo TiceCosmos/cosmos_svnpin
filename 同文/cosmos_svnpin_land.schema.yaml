@@ -9,6 +9,7 @@ schema:
 
 speller:
   algebra:
+    - xform/^([A-Z]*)([a-z]*)$/$2$1/
     - xform/^([jqxy])u([HSPNZ]*)$/$1v$2/
     - xform/^([mn])([HSPNZ]*)$/$1$1$2/
     - xform/^([aoe])([HSPNZ]*)$/$1$1$2/
@@ -41,10 +42,9 @@ speller:
     - xform/^([a-z])un/$1p/
     - erase/^[a-z]([A-Z]*)$/
     - erase/^[a-z][a-z][a-z]+([A-Z]*)$/
-    - xform/^([a-z]+[A-Z][A-Z])[A-Z]*([A-Z])/$1$2/
+    - xform/^([a-z]+[A-Z][A-Z])[A-Z]*/$1/
     - derive/^([a-z]+)[A-Z]+/$1/
     - derive/^([a-z]+[A-Z])[A-Z]+/$1/
-    - derive/^([a-z]+[A-Z][A-Z])[A-Z]+/$1/
 
 translator:
   prism: cosmos_svnpin_land

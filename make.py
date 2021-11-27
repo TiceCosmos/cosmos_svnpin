@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import codecs
 import datetime
 import logging
 import os
@@ -84,7 +85,7 @@ def 生成_核心词库() -> None:
                 logging.warning("{}: not find the stroke of {}".format((words, words[j])))
                 break
 
-            code_list[j] = code + stroke
+            code_list[j] = stroke + code
         else:
             hybrid_dict[i] = (words, ' '.join(code_list), count)
 
@@ -121,12 +122,15 @@ def 生成_统计语料() -> None:
             "columns:\n",
             "  - text\n",
             "  - weight\n",
-            "---\n\n",
+            "...\n\n",
         ]
 
         filepath = os.path.join(thuocl_path, filename + ".txt")
         with open(filepath, "r", encoding="utf-8") as file:
-            contents += file.read()
+            content = file.read()
+            if content[0] == codecs.BOM_UTF8.decode("utf-8"):
+                content = content[1:]
+            contents += content
 
         filepath = os.path.join("target", filename + ".dict.yaml")
         with open(filepath, "w", encoding="utf-8") as file:
@@ -158,7 +162,7 @@ def 生成_集成词库() -> None:
         file.write(comments)
         file.write("---\n")
         contents = yaml.dump(contents, file, sort_keys=False)
-        file.write("---\n")
+        file.write("...\n")
 
 
 def 生成_中州韵配置() -> None:

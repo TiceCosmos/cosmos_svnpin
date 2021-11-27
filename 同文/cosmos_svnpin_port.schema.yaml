@@ -28,20 +28,18 @@ engine:
   translators:
     - echo_translator
     - script_translator
-  filters:
-    - simplifier
-    - uniquifier
 
 speller:
-  alphabet: qwertyuiopasdfghjklzxcvbnmCVBNM
+  alphabet: qwertyuiopasdfghjklzxcvbnmHSPNZBE
   delimiter: " '"
   auto_select: false
-  use_space: true
+  use_space: false
   algebra:
-    - xform/^([jqxy])u([HSPNZ]*)$/$1v$2/
-    - xform/^([mn])([HSPNZ]*)$/$1$1$2/
-    - xform/^([aoe])([HSPNZ]*)$/$1$1$2/
-    - xform/^([aoe])(ng[HSPNZ]*)$/$1$1$2/
+    - xform/^([A-Z]*)([a-z]*)$/$2$1/
+    - xform/^([jqxy])u([A-Z]*)$/$1v$2/
+    - xform/^([mn])([A-Z]*)$/$1$1$2/
+    - xform/^([aoe])([A-Z]*)$/$1$1$2/
+    - xform/^([aoe])(ng[A-Z]*)$/$1$1$2/
     - xform/^zh/v/
     - xform/^ch/i/
     - xform/^sh/u/
@@ -68,21 +66,58 @@ speller:
     - xform/^([a-z])ue/$1t/
     - xform/^([a-z])ui/$1v/
     - xform/^([a-z])un/$1p/
-    - erase/^[a-z]([A-Z]*)$/
-    - erase/^[a-z][a-z][a-z]+([A-Z]*)$/
-    - xlit/qwertyuiopasdfghjklzxcvbnmHSPNZ/qwwrryyiipassffhjjlzxxvbbmCVBNM/
-    - xform/^([a-z]+[A-Z][A-Z])[A-Z]*([A-Z])/$1$2/
-    - derive/^([a-z]+)[A-Z]+/$1/
-    - derive/^([a-z]+[A-Z])[A-Z]+/$1/
-    - derive/^([a-z]+[A-Z][A-Z])[A-Z]+/$1/
+    - erase/^[a-z][A-Z]*$/
+    - erase/^[a-z][a-z][a-z]+[A-Z]*$/
+    - xlit/qwertyuiopasdfghjklzxcvbnm/qwwrryyiipassffhjjlzxxvbbm/
+    - derive/^[a-z]+([A-Z]+)/B$1E/
+    - derive/^[a-z]([a-z])([A-Z]+)/B$1$2/
+    - derive/^([a-z])[a-z]([A-Z]+)/$1E$2/
+    - xform/^([a-zBE]{2}[HSPNZ]{2}).+$/$1/
+    - derive/^([a-zBE]{2}).+/$1/
+    - derive/^([a-zBE]{2}[HSPNZ]).+/$1/
+    - derive/^(B[HSPNZ]{1}).+/$1/
+    - derive/^(B[HSPNZ]{2}).+/$1/
+    - derive/^(B[HSPNZ]{3}).+/$1/
+    - derive/^(B[HSPNZ]{4}).+/$1/
+    - derive/^(B[HSPNZ]{5}).+/$1/
+    - derive/^(B[HSPNZ]{6}).+/$1/
+    - derive/^(B[HSPNZ]{7}).+/$1/
+    - derive/^(B[HSPNZ]{8}).+/$1/
+    - derive/^(B[HSPNZ]{9}).+/$1/
+    - derive/^(B[HSPNZ]{10}).+/$1/
+    - derive/^(B[HSPNZ]{11}).+/$1/
+    - derive/^(B[HSPNZ]{12}).+/$1/
+    - derive/^(B[HSPNZ]{13}).+/$1/
+    - derive/^(B[HSPNZ]{14}).+/$1/
+    - derive/^(B[HSPNZ]{15}).+/$1/
+    - derive/^(B[HSPNZ]{16}).+/$1/
+    - derive/^(B[HSPNZ]{17}).+/$1/
+    - derive/^(B[HSPNZ]{18}).+/$1/
+    - derive/^(B[HSPNZ]{19}).+/$1/
+    - derive/^(B[HSPNZ]{20}).+/$1/
+    - derive/^(B[HSPNZ]{21}).+/$1/
+    - derive/^(B[HSPNZ]{22}).+/$1/
+    - derive/^(B[HSPNZ]{23}).+/$1/
+    - derive/^(B[HSPNZ]{24}).+/$1/
+    - derive/^(B[HSPNZ]{25}).+/$1/
+    - derive/^(B[HSPNZ]{26}).+/$1/
+    - derive/^(B[HSPNZ]{27}).+/$1/
+    - derive/^(B[HSPNZ]{28}).+/$1/
+    - derive/^(B[HSPNZ]{29}).+/$1/
+    - derive/^(B[HSPNZ]{30}).+/$1/
 
 translator:
   dictionary: cosmos_pinyin
   prism: cosmos_svnpin_port
   enable_user_dict: true
   spelling_hints: 10
+  preedit_format:
+    - xform/B([A-Z])E/<$1>/
+    - xform/B([A-Z])/<$1/
+    - xform/([A-Z])E/$1>/
+    - xlit/BE/**/
   comment_format:
-    - xform/([HSPNZ])[HSPNZ]*/$1/
+    - xform/([A-Z])[A-Z]*([a-z]*)/$2$1/
     - xlit/HSPNZ/一丨丿丶𡿨/
 
 key_binder:

@@ -51,6 +51,7 @@ speller:
   alphabet: qwertyuiopasdfghjklzxcvbnmCVBNM
   delimiter: " '"
   algebra:
+    - xform/^([A-Z]*)([a-z]*)$/$2$1/
     - xform/^([jqxy])u([HSPNZ]*)$/$1v$2/
     - xform/^([mn])([HSPNZ]*)$/$1$1$2/
     - xform/^([aoe])([HSPNZ]*)$/$1$1$2/
@@ -91,7 +92,7 @@ speller:
 
 translator:
   dictionary: cosmos_pinyin
-  prism: cosmos_sunyin
+  prism: cosmos_svnyin
   preedit_format:
     - xform/([bpmnljqxy])n/$1in/
     - xform/(\w)g/$1eng/
@@ -133,6 +134,7 @@ reverse_lookup:
   suffix: "'"
   tips: 〔笔画〕
   preedit_format:
+    - xform/([A-Z]*)([a-z]*)/$2$1/
     - xlit/hspnz/㇐㇑丿㇔𡿨/
   comment_format:
     - xform/([nl])v/$1ü/

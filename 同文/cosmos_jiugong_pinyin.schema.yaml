@@ -9,11 +9,11 @@ schema:
 
 speller:
   algebra:
-    - xlit/abcdefghijklmnopqrstuvwxyzHSPNZ/bbbdddgggjjjmmmpppptttwwwwCVBNM/
-    - xform/^([a-z]+[A-Z][A-Z])[A-Z]*([A-Z])/$1$2/
+    - xform/^([A-Z]*)([a-z]*)$/$2$1/
+    - xlit/abcdefghijklmnopqrstuvwxyz/bbbdddgggjjjmmmpppptttwwww/
+    - xform/^([a-z]+[A-Z][A-Z])[A-Z]*/$1/
     - derive/^([a-z]+)[A-Z]+/$1/
     - derive/^([a-z]+[A-Z])[A-Z]+/$1/
-    - derive/^([a-z]+[A-Z][A-Z])[A-Z]+/$1/
 
 translator:
   prism: cosmos_jiugong_pinyin

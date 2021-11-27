@@ -7,13 +7,23 @@ schema:
   schema_id: cosmos_stroke
   description: 笔画键盘
 
+engine:
+  translators:
+    - echo_translator
+    - table_translator
+  filters:
+    - single_char_filter
+
 speller:
+  alphabet: XAOEIUHSPNZ
   algebra:
-    - xform/^[a-z]+([HSPNZ]+)$/$1/
-    - xlit/HSPNZ/CVBNM/
+    - xform/^([A-Z]+)[a-z]*$/$1X/
 
 translator:
   prism: cosmos_stroke
-
-style:
-  keyboards: [.default]
+  enable_completion: true
+  enable_user_dict: FALSE
+  preedit_format:
+    - xform/X//
+  comment_format:
+    - xlit/HSPNZ/一丨丿丶𡿨/

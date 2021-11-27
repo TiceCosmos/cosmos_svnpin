@@ -1,4 +1,4 @@
-﻿# Rime dictionary
+# Rime dictionary
 # encoding: utf-8
 # 拼音笔画码表
 
@@ -6,5 +6,5 @@
 name: cosmos_pinyin
 sort: by_weight
 vocabulary: essay-zh-hans
----
+...
 
