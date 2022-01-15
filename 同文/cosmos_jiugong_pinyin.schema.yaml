@@ -1,19 +1,33 @@
 # Rime schema settings
 # encoding: utf-8
-__include: cosmos_svnpin_port.schema:/
+__include: cosmos_schema_common:/
 
 schema:
   name: "九宫拼音"
   schema_id: cosmos_jiugong_pinyin
   description: 九宫拼音
 
+engine:
+  translators:
+    - echo_translator
+    - script_translator
+
 speller:
   algebra:
     - xform/^([A-Z]*)([a-z]*)$/$2$1/
     - xlit/abcdefghijklmnopqrstuvwxyz/bbbdddgggjjjmmmpppptttwwww/
-    - xform/^([a-z]+[A-Z][A-Z])[A-Z]*/$1/
+    - xform/^([a-z]+)([A-Z])$/$1$2$2$2/
+    - xform/^([a-z]+[A-Z])([A-Z])$/$1$2$2/
+    - xform/^([a-z]+[A-Z]{2}).+([A-Z])$/$1$2/
     - derive/^([a-z]+)[A-Z]+/$1/
-    - derive/^([a-z]+[A-Z])[A-Z]+/$1/
+    - derive/^([a-z]+[A-Z]).+/$1/
+    - derive/^([a-z]+[A-Z]{2}).+/$1/
 
 translator:
   prism: cosmos_jiugong_pinyin
+
+style:
+  layout:
+    sticky_lines: 3
+    max_entries: 3
+  keyboards: [.default, cosmos_punctuation, cosmos_letter_port, cosmos_number_port, cosmos_select]

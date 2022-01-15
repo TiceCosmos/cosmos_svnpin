@@ -1,6 +1,6 @@
 # Rime schema settings
 # encoding: utf-8
-__include: cosmos_svnpin_port.schema:/
+__include: cosmos_schema_common:/
 
 schema:
   name: "笔画键盘"
@@ -15,15 +15,20 @@ engine:
     - single_char_filter
 
 speller:
-  alphabet: XAOEIUHSPNZ
   algebra:
     - xform/^([A-Z]+)[a-z]*$/$1X/
 
 translator:
   prism: cosmos_stroke
   enable_completion: true
-  enable_user_dict: FALSE
+  enable_user_dict: false
   preedit_format:
     - xform/X//
   comment_format:
     - xlit/HSPNZ/一丨丿丶𡿨/
+
+style:
+  layout:
+    sticky_lines: 4
+    max_entries: 4
+  keyboards: [.default, cosmos_punctuation, cosmos_letter_port, cosmos_number_port, cosmos_select]

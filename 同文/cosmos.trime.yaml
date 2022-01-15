@@ -20,17 +20,12 @@ height:
   1: &htool 50
 
 style:
-  candidate_padding: 12
-  candidate_text_size: 22
-  candidate_view_height: 32
-  key_height: 60
+  key_height: 50
   key_height_land: 50
-  key_long_text_size: 22
-  key_text_size: 22
-  keyboard_padding_landscape: 0
-  keyboard_padding_portrait: 0
-  label_text_size: 22
+  keyboard_padding_left: 0
+  keyboard_padding_right: 60
   locale: zh_CN
+  reset_ascii_mode: true
   speech_opencc_config: none
   layout:
     min_length: 1
@@ -40,15 +35,13 @@ style:
     movable: false
 
 preset_keys:
-  liquid_keyboard_switch: { toggle: _liquid_keyboard, send: Mode_switch, states: [附, 主] }
-  Keyboard_default: { label: "汉", select: .default, send: Eisu_toggle }
+  Keyboard_default: { label: "主", select: .default, send: Eisu_toggle }
   Keyboard_letter_land: { label: "英", select: cosmos_letter_land, send: Eisu_toggle }
   Keyboard_letter_port: { label: "英", select: cosmos_letter_port, send: Eisu_toggle }
   Keyboard_number_land: { label: "数", select: cosmos_number_land, send: Eisu_toggle }
   Keyboard_number_port: { label: "数", select: cosmos_number_port, send: Eisu_toggle }
   Keyboard_punctuation: { label: "符", select: cosmos_punctuation, send: Eisu_toggle }
   Keyboard_select: { label: "控", select: cosmos_select, send: Eisu_toggle }
-  Keyboard_mine: { label: "定", select: cosmos_mine, send: Eisu_toggle }
   Hide: { label: "隐" }
   paste: { label: "贴" }
   undo: { label: "撤" }
@@ -163,12 +156,12 @@ preset_keyboards:
       - { click: m, label: "M", hint: "ian", long_click: "、", swipe_up: "、" }
       - { click: BackSpace, swipe_up: cut_all }
       # 行
-      - { click: Keyboard_letter_port, width: *w7, height: *htool, long_click: Color_settings, swipe_up: Color_settings, has_menu: Page_Up, hint: "在这茫" }
-      - { click: Keyboard_number_port, width: *w7, long_click: Keyboard_mine, swipe_up: Keyboard_mine, has_menu: BUTTON_1, hint: "茫的宇" }
-      - { click: Keyboard_select, width: *w7, long_click: Left, swipe_up: Left, has_menu: BUTTON_2, hint: "宙中，" }
+      - { click: Keyboard_letter_port, width: *w7, height: *htool, long_click: liquid_keyboard_switch, swipe_up: liquid_keyboard_switch, has_menu: Page_Up, hint: "在这茫" }
+      - { click: Keyboard_number_port, width: *w7, long_click: Color_settings, swipe_up: Color_settings, has_menu: BUTTON_1, hint: "茫的宇" }
+      - { click: Keyboard_select, width: *w7, long_click: one_hand_switch_1, swipe_up: one_hand_switch_1, has_menu: BUTTON_2, hint: "宙中，" }
       - { click: space, width: *w7, long_click: F4, swipe_up: F4, has_menu: BUTTON_3, hint: "如同尘" }
-      - { click: Keyboard_punctuation, width: *w7, long_click: Right, swipe_up: Right, has_menu: BUTTON_4, hint: "埃的我" }
-      - { click: Return, width: *w7, long_click: liquid_keyboard_switch, swipe_up: liquid_keyboard_switch, has_menu: BUTTON_5, hint: "应何去", label: "Etr" }
+      - { click: Keyboard_punctuation, width: *w7, long_click: one_hand_switch_2, swipe_up: one_hand_switch_2, has_menu: BUTTON_4, hint: "埃的我" }
+      - { click: Return, width: *w7, has_menu: BUTTON_5, hint: "应何去", label: "Etr" }
       - { click: paste, width: *w7, long_click: DeleteCandidate, swipe_up: DeleteCandidate, has_menu: Page_Down, hint: "何从！" }
 
   cosmos_jiugong_pinyin:
@@ -190,29 +183,29 @@ preset_keyboards:
       - { click: "0", width: *w10 }
       # 行
       - { click: "？" }
-      - { click: "'", label: "分" }
-      - { click: b, label: "ABC" }
-      - { click: d, label: "DEF" }
+      - { click: "'", label: "分", long_click: "1", swipe_up: "1" }
+      - { click: b, label: "ABC", long_click: "2", swipe_up: "2" }
+      - { click: d, label: "DEF", long_click: "3", swipe_up: "3" }
       - { click: "、" }
       # 行
       - { click: "。" }
-      - { click: g, label: "GHI" }
-      - { click: j, label: "JKL" }
-      - { click: m, label: "MNO" }
+      - { click: g, label: "GHI", long_click: "4", swipe_up: "4" }
+      - { click: j, label: "JKL", long_click: "5", swipe_up: "5" }
+      - { click: m, label: "MNO", long_click: "6", swipe_up: "6" }
       - { click: "，" }
       # 行
       - { click: "@" }
-      - { click: p, label: "PQRS" }
-      - { click: t, label: "TUV" }
-      - { click: w, label: "WXYZ" }
+      - { click: p, label: "PQRS", long_click: "7", swipe_up: "7" }
+      - { click: t, label: "TUV", long_click: "8", swipe_up: "8" }
+      - { click: w, label: "WXYZ", long_click: "9", swipe_up: "9" }
       - { click: BackSpace }
       # 行
-      - { click: Keyboard_letter_port, width: *w7, height: *htool, long_click: Color_settings, swipe_up: Color_settings, has_menu: Page_Up, hint: "在这茫" }
-      - { click: Keyboard_number_port, width: *w7, long_click: Keyboard_mine, swipe_up: Keyboard_mine, has_menu: BUTTON_1, hint: "茫的宇" }
-      - { click: Keyboard_select, width: *w7, long_click: Left, swipe_up: Left, has_menu: BUTTON_2, hint: "宙中，" }
+      - { click: Keyboard_letter_port, width: *w7, height: *htool, long_click: liquid_keyboard_switch, swipe_up: liquid_keyboard_switch, has_menu: Page_Up, hint: "在这茫" }
+      - { click: Keyboard_number_port, width: *w7, long_click: Color_settings, swipe_up: Color_settings, has_menu: BUTTON_1, hint: "茫的宇" }
+      - { click: Keyboard_select, width: *w7, long_click: one_hand_switch_1, swipe_up: one_hand_switch_1, has_menu: BUTTON_2, hint: "宙中，" }
       - { click: space, width: *w7, long_click: F4, swipe_up: F4, has_menu: BUTTON_3, hint: "如同尘" }
-      - { click: Keyboard_punctuation, width: *w7, long_click: Right, swipe_up: Right, has_menu: BUTTON_4, hint: "埃的我" }
-      - { click: Return, width: *w7, long_click: liquid_keyboard_switch, swipe_up: liquid_keyboard_switch, has_menu: BUTTON_5, hint: "应何去", label: "Etr" }
+      - { click: Keyboard_punctuation, width: *w7, long_click: one_hand_switch_2, swipe_up: one_hand_switch_2, has_menu: BUTTON_4, hint: "埃的我" }
+      - { click: Return, width: *w7, has_menu: BUTTON_5, hint: "应何去", label: "Etr" }
       - { click: paste, width: *w7, long_click: DeleteCandidate, swipe_up: DeleteCandidate, has_menu: Page_Down, hint: "何从！" }
 
   cosmos_stroke:
@@ -241,12 +234,12 @@ preset_keyboards:
       - { click: "X", width: *w2 }
       - { click: BackSpace, width: *w2 }
       # 行
-      - { click: Keyboard_letter_port, width: *w7, height: *htool, long_click: Color_settings, swipe_up: Color_settings, has_menu: Page_Up, hint: "在这茫" }
-      - { click: Keyboard_number_port, width: *w7, long_click: Keyboard_mine, swipe_up: Keyboard_mine, has_menu: BUTTON_1, hint: "茫的宇" }
-      - { click: Keyboard_select, width: *w7, long_click: Left, swipe_up: Left, has_menu: BUTTON_2, hint: "宙中，" }
+      - { click: Keyboard_letter_port, width: *w7, height: *htool, long_click: liquid_keyboard_switch, swipe_up: liquid_keyboard_switch, has_menu: Page_Up, hint: "在这茫" }
+      - { click: Keyboard_number_port, width: *w7, long_click: Color_settings, swipe_up: Color_settings, has_menu: BUTTON_1, hint: "茫的宇" }
+      - { click: Keyboard_select, width: *w7, long_click: one_hand_switch_1, swipe_up: one_hand_switch_1, has_menu: BUTTON_2, hint: "宙中，" }
       - { click: space, width: *w7, long_click: F4, swipe_up: F4, has_menu: BUTTON_3, hint: "如同尘" }
-      - { click: Keyboard_punctuation, width: *w7, long_click: Right, swipe_up: Right, has_menu: BUTTON_4, hint: "埃的我" }
-      - { click: Return, width: *w7, long_click: liquid_keyboard_switch, swipe_up: liquid_keyboard_switch, has_menu: BUTTON_5, hint: "应何去", label: "Etr" }
+      - { click: Keyboard_punctuation, width: *w7, long_click: one_hand_switch_2, swipe_up: one_hand_switch_2, has_menu: BUTTON_4, hint: "埃的我" }
+      - { click: Return, width: *w7, has_menu: BUTTON_5, hint: "应何去", label: "Etr" }
       - { click: paste, width: *w7, long_click: DeleteCandidate, swipe_up: DeleteCandidate, has_menu: Page_Down, hint: "何从！" }
 
   cosmos_punctuation:
@@ -525,37 +518,6 @@ preset_keyboards:
       - { click: Return, width: *w7, hint: "应何去" }
       - { click: BackSpace, width: *w7, hint: "何从！" }
 
-  cosmos_mine:
-    name: "个人信息"
-    author: "花蛄"
-    ascii_mode: 0
-    width: *w3
-    keys:
-      # 行
-      - click: ""
-      - click: ""
-      - click: ""
-      # 行
-      - click: ""
-      - click: ""
-      - click: ""
-      # 行
-      - click: ""
-      - click: ""
-      - click: ""
-      # 行
-      - click: ""
-      - click: ""
-      - click: ""
-      # 行
-      - { click: Keyboard_default, width: *w7, height: *htool, hint: "在这茫" }
-      - { click: Keyboard_letter_port, width: *w7, hint: "茫的宇" }
-      - { click: Keyboard_select, width: *w7, hint: "宙中，" }
-      - { click: space, width: *w7, hint: "如同尘" }
-      - { click: undo, width: *w7, hint: "埃的我" }
-      - { click: Return, width: *w7, hint: "应何去" }
-      - { click: BackSpace, width: *w7, hint: "何从！" }
-
   cosmos_emoji:
     name: "字符"
     keys:
@@ -589,4 +551,6 @@ preset_keyboards:
       - { click: "癸", long_click: "昭阳", swipe_up: "昭阳" }
 
 liquid_keyboard:
-  keyboards: [exit, clipboard, unit, math, symbol, grease]
+  key_height: 45
+  key_height_land: 45
+  keyboards: [exit, clipboard, unit, math, symbol, grease, list]

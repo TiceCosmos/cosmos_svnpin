@@ -1,0 +1,39 @@
+# Rime schema settings
+# encoding: utf-8
+
+engine:
+  processors:
+    - ascii_composer
+    - key_binder
+    - speller
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+
+speller:
+  alphabet: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+  delimiter: " '"
+  auto_select: false
+  use_space: false
+
+translator:
+  dictionary: cosmos_pinyin
+  enable_user_dict: true
+  spelling_hints: 10
+  comment_format:
+    - xform/([A-Z])[A-Z]*([a-z]*)/$2$1/
+    - xlit/HSPNZ/一丨丿丶𡿨/
+
+key_binder:
+  import_preset: default
+
+switches:
+  - name: simplification
+    reset: 0
+  - name: _hide_key_hint
+    reset: 0

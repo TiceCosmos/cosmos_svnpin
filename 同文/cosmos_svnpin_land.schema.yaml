@@ -1,11 +1,16 @@
 # Rime schema settings
 # encoding: utf-8
-__include: cosmos_svnpin_port.schema:/
+__include: cosmos_schema_common:/
 
 schema:
   name: "全键双拼"
   schema_id: cosmos_svnpin_land
   description: 全键 + 自然码双拼 + 笔划辅助码
+
+engine:
+  translators:
+    - echo_translator
+    - script_translator
 
 speller:
   algebra:
@@ -40,11 +45,18 @@ speller:
     - xform/^([a-z])ue/$1t/
     - xform/^([a-z])ui/$1v/
     - xform/^([a-z])un/$1p/
-    - erase/^[a-z]([A-Z]*)$/
-    - erase/^[a-z][a-z][a-z]+([A-Z]*)$/
-    - xform/^([a-z]+[A-Z][A-Z])[A-Z]*/$1/
-    - derive/^([a-z]+)[A-Z]+/$1/
-    - derive/^([a-z]+[A-Z])[A-Z]+/$1/
+    - erase/^[a-z][a-z]$/
+    - erase/^[a-z][A-Z]*$/
+    - erase/^[a-z][a-z][a-z]+[A-Z]*$/
+    - derive/^[a-z]+([A-Z]+)/B$1E/
+    - derive/^[a-z]([a-z])([A-Z]+)/B$1$2/
+    - derive/^([a-z])[a-z]([A-Z]+)/$1E$2/
+    - xform/^([a-zBE]{2})([HSPNZ])$/$1$2$2$2/
+    - xform/^([a-zBE]{2}[HSPNZ])([HSPNZ])$/$1$2$2/
+    - xform/^([a-zBE]{2}[HSPNZ]{2}).+([HSPNZ])$/$1$2/
+    - derive/^([a-zBE]{2}).+/$1/
+    - derive/^([a-zBE]{2}[HSPNZ]).+/$1/
+    - derive/^([a-zBE]{2}[HSPNZ]{2}).+/$1/
 
 translator:
   prism: cosmos_svnpin_land

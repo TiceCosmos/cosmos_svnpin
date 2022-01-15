@@ -2,8 +2,5 @@
   "python.envFile": "${workspaceFolder}/.env",
   "python.pythonPath": "__pypackages__/3.9/.venv/bin/python",
   "python.terminal.activateEnvironment": false,
-  "yaml.format.printWidth": 200,
-  "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
-  }
+  "yaml.format.printWidth": 200
 }

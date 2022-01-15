@@ -1,39 +1,19 @@
 # Rime schema settings
 # encoding: utf-8
+__include: cosmos_schema_common:/
 
 schema:
   name: "双键双拼"
   schema_id: cosmos_svnpin_port
   description: 双键 + 自然码双拼 + 笔划辅助码
 
-switches:
-  - name: simplification
-    reset: 0
-  - name: _hide_key_hint
-    reset: 0
-
 engine:
-  processors:
-    - ascii_composer
-    - key_binder
-    - speller
-    - selector
-    - navigator
-    - express_editor
-  segmentors:
-    - ascii_segmentor
-    - abc_segmentor
-    - punct_segmentor
-    - fallback_segmentor
   translators:
     - echo_translator
     - script_translator
+    - table_translator@custom_phrase
 
 speller:
-  alphabet: qwertyuiopasdfghjklzxcvbnmHSPNZBE
-  delimiter: " '"
-  auto_select: false
-  use_space: false
   algebra:
     - xform/^([A-Z]*)([a-z]*)$/$2$1/
     - xform/^([jqxy])u([A-Z]*)$/$1v$2/
@@ -66,15 +46,19 @@ speller:
     - xform/^([a-z])ue/$1t/
     - xform/^([a-z])ui/$1v/
     - xform/^([a-z])un/$1p/
+    - erase/^[a-z][a-z]$/
     - erase/^[a-z][A-Z]*$/
     - erase/^[a-z][a-z][a-z]+[A-Z]*$/
     - xlit/qwertyuiopasdfghjklzxcvbnm/qwwrryyiipassffhjjlzxxvbbm/
     - derive/^[a-z]+([A-Z]+)/B$1E/
     - derive/^[a-z]([a-z])([A-Z]+)/B$1$2/
     - derive/^([a-z])[a-z]([A-Z]+)/$1E$2/
-    - xform/^([a-zBE]{2}[HSPNZ]{2}).+$/$1/
+    - xform/^([a-zBE]{2})([HSPNZ])$/$1$2$2$2/
+    - xform/^([a-zBE]{2}[HSPNZ])([HSPNZ])$/$1$2$2/
+    - xform/^([a-zBE]{2}[HSPNZ]{2}).+([HSPNZ])$/$1$2/
     - derive/^([a-zBE]{2}).+/$1/
     - derive/^([a-zBE]{2}[HSPNZ]).+/$1/
+    - derive/^([a-zBE]{2}[HSPNZ]{2}).+/$1/
     - derive/^(B[HSPNZ]{1}).+/$1/
     - derive/^(B[HSPNZ]{2}).+/$1/
     - derive/^(B[HSPNZ]{3}).+/$1/
@@ -107,24 +91,23 @@ speller:
     - derive/^(B[HSPNZ]{30}).+/$1/
 
 translator:
-  dictionary: cosmos_pinyin
   prism: cosmos_svnpin_port
-  enable_user_dict: true
-  spelling_hints: 10
   preedit_format:
     - xform/B([A-Z])E/<$1>/
     - xform/B([A-Z])/<$1/
     - xform/([A-Z])E/$1>/
     - xlit/BE/**/
-  comment_format:
-    - xform/([A-Z])[A-Z]*([a-z]*)/$2$1/
-    - xlit/HSPNZ/一丨丿丶𡿨/
 
-key_binder:
-  import_preset: default
+custom_phrase:
+  dictionary: ""
+  user_dict: custom_phrase
+  db_class: tabledb
+  enable_sentence: false
+  enable_completion: false
+  initial_quality: 1
 
 style:
   layout:
     sticky_lines: 4
     max_entries: 4
-  keyboards: [.default, cosmos_punctuation, cosmos_letter_port, cosmos_number_port, cosmos_select, cosmos_mine]
+  keyboards: [.default, cosmos_punctuation, cosmos_letter_port, cosmos_number_port, cosmos_select]
