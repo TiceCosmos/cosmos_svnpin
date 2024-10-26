@@ -16,18 +16,13 @@ speller:
   algebra:
     - xform/^([A-Z]*)([a-z]*)$/$2$1/
     - xlit/abcdefghijklmnopqrstuvwxyz/bbbdddgggjjjmmmpppptttwwww/
-    - xform/^([a-z]+)([A-Z])$/$1$2$2$2/
-    - xform/^([a-z]+[A-Z])([A-Z])$/$1$2$2/
-    - xform/^([a-z]+[A-Z]{2}).+([A-Z])$/$1$2/
+    - xform/^([a-z]+)([A-Z])$/$1$2$2$2$2/
+    - xform/^([a-z]+[A-Z])([A-Z])$/$1$2$2$2/
+    - xform/^([a-z]+[A-Z]{2}).+([A-Z])$/$1$2$2/
     - derive/^([a-z]+)[A-Z]+/$1/
     - derive/^([a-z]+[A-Z]).+/$1/
     - derive/^([a-z]+[A-Z]{2}).+/$1/
+    - derive/^([a-z]+[A-Z]{3}).+/$1/
 
 translator:
   prism: cosmos_jiugong_pinyin
-
-style:
-  layout:
-    sticky_lines: 3
-    max_entries: 3
-  keyboards: [.default, cosmos_punctuation, cosmos_letter_port, cosmos_number_port, cosmos_select]

@@ -27,7 +27,7 @@ translator:
   spelling_hints: 10
   comment_format:
     - xform/([A-Z])[A-Z]*([a-z]*)/$2$1/
-    - xlit/HSPNZ/一丨丿丶𡿨/
+    - xlit/HSPNZ/⼀⼁⼃⼂⼄/
 
 key_binder:
   import_preset: default

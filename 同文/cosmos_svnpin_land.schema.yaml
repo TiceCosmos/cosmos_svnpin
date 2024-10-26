@@ -51,18 +51,14 @@ speller:
     - derive/^[a-z]+([A-Z]+)/B$1E/
     - derive/^[a-z]([a-z])([A-Z]+)/B$1$2/
     - derive/^([a-z])[a-z]([A-Z]+)/$1E$2/
-    - xform/^([a-zBE]{2})([HSPNZ])$/$1$2$2$2/
-    - xform/^([a-zBE]{2}[HSPNZ])([HSPNZ])$/$1$2$2/
-    - xform/^([a-zBE]{2}[HSPNZ]{2}).+([HSPNZ])$/$1$2/
+    - xform/^([a-zBE]{2})([HSPNZ])$/$1$2$2$2$2/
+    - xform/^([a-zBE]{2}[HSPNZ])([HSPNZ])$/$1$2$2$2/
+    - xform/^([a-zBE]{2}[HSPNZ]{2})([HSPNZ])$/$1$2$2/
+    - xform/^([a-zBE]{2}[HSPNZ]{3}).+([HSPNZ])$/$1$2/
     - derive/^([a-zBE]{2}).+/$1/
     - derive/^([a-zBE]{2}[HSPNZ]).+/$1/
     - derive/^([a-zBE]{2}[HSPNZ]{2}).+/$1/
+    - derive/^([a-zBE]{2}[HSPNZ]{3}).+/$1/
 
 translator:
   prism: cosmos_svnpin_land
-
-style:
-  layout:
-    sticky_lines: 0
-    max_entries: 0
-  keyboards: [.default, cosmos_letter_land, cosmos_number_land]

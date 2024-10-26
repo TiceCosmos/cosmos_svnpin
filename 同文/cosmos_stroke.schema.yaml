@@ -25,10 +25,4 @@ translator:
   preedit_format:
     - xform/X//
   comment_format:
-    - xlit/HSPNZ/一丨丿丶𡿨/
-
-style:
-  layout:
-    sticky_lines: 4
-    max_entries: 4
-  keyboards: [.default, cosmos_punctuation, cosmos_letter_port, cosmos_number_port, cosmos_select]
+    - xlit/HSPNZ/⼀⼁⼃⼂⼄/
