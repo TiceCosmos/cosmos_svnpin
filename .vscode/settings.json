@@ -1,6 +1,6 @@
 {
-  "python.envFile": "${workspaceFolder}/.env",
-  "python.pythonPath": "__pypackages__/3.9/.venv/bin/python",
-  "python.terminal.activateEnvironment": false,
-  "yaml.format.printWidth": 200
+	"editor.defaultFormatter": "dprint.dprint",
+	"python.envFile": "${workspaceFolder}/.env",
+	"python.pythonPath": "__pypackages__/3.9/.venv/bin/python",
+	"python.terminal.activateEnvironment": false
 }

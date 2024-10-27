@@ -138,6 +138,7 @@ reverse_lookup:
   suffix: "'"
   tips: 〔笔画〕
   preedit_format:
+    - xform/([A-Z]*)([a-z]*)/$2$1/
     - xlit/hspnz/⼀⼁⼃⼂⼄/
   comment_format:
     - xform/([nl])v/$1ü/

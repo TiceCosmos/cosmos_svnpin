@@ -7,7 +7,6 @@ import os
 import shutil
 import yaml
 
-from yaml.loader import FullLoader
 
 version = datetime.datetime.now().strftime("%Y.%m.%d")
 
@@ -76,9 +75,9 @@ def 生成_核心词库() -> None:
     stroke_dict = 获取笔画字典()
 
     for i, (words, codes, count) in enumerate(hybrid_dict):
-        code_list = codes.split(' ')
+        code_list = codes.split(" ")
 
-        for (j, code) in enumerate(code_list):
+        for j, code in enumerate(code_list):
             stroke = stroke_dict.get(words[j])
 
             if stroke == None:
@@ -87,26 +86,28 @@ def 生成_核心词库() -> None:
 
             code_list[j] = stroke + code
         else:
-            hybrid_dict[i] = (words, ' '.join(code_list), count)
+            hybrid_dict[i] = (words, " ".join(code_list), count)
 
     with open(os.path.join("target", "pinyin_simp_stroke.dict.yaml"), "w", encoding="utf-8") as file:
-        file.writelines([
-            "# Rime dictionary\n",
-            "# encoding: utf-8\n",
-            "# 简体中文，拼音 + 笔画\n",
-            "\n---\n",
-            "name: pinyin_simp_stroke\n",
-            "version: {}\n".format(version),
-            "sort: by_weight\n",
-            "columns:\n",
-            "  - text\n",
-            "  - code\n",
-            "  - weight\n",
-            "...\n\n",
-        ])
+        file.writelines(
+            [
+                "# Rime dictionary\n",
+                "# encoding: utf-8\n",
+                "# 简体中文，拼音 + 笔画\n",
+                "\n---\n",
+                "name: pinyin_simp_stroke\n",
+                "version: {}\n".format(version),
+                "sort: by_weight\n",
+                "columns:\n",
+                "  - text\n",
+                "  - code\n",
+                "  - weight\n",
+                "...\n\n",
+            ]
+        )
         for line in hybrid_dict:
-            file.write('\t'.join(line))
-            file.write('\n')
+            file.write("\t".join(line))
+            file.write("\n")
 
 
 def 生成_统计语料() -> None:
@@ -138,6 +139,8 @@ def 生成_统计语料() -> None:
 
 
 def 生成_集成词库() -> None:
+    from yaml.loader import FullLoader
+
     comments = ""
     contents = ""
 
@@ -165,18 +168,11 @@ def 生成_集成词库() -> None:
         file.write("...\n")
 
 
-def 生成_中州韵配置() -> None:
-    folder = os.path.join("target", "中州韵")
-    统一复制(folder)
-    复制文件(folder, "中州韵", "cosmos_svnpin.schema.yaml")
-
-
-def 生成_同文配置() -> None:
-    folder = os.path.join("target", "同文")
-    统一复制(folder)
-    复制文件(folder, "同文", "cosmos.trime.yaml")
-    复制文件(folder, "同文", "cosmos_svnpin_land.schema.yaml")
-    复制文件(folder, "同文", "cosmos_svnpin_port.schema.yaml")
+def 生成_配置(source: str) -> None:
+    target = os.path.join("target", source)
+    统一复制(target)
+    for filename in os.listdir(source):
+        复制文件(target, source, filename)
 
 
 def generate() -> None:
@@ -184,8 +180,8 @@ def generate() -> None:
     生成_统计语料()
     生成_集成词库()
 
-    生成_中州韵配置()
-    生成_同文配置()
+    生成_配置("中州韵")
+    生成_配置("同文")
 
 
 if __name__ == "__main__":

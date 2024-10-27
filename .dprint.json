@@ -1,26 +1,17 @@
 {
-  "$schema": "https://dprint.dev/schemas/v0.json",
-  "includes": [
-    "**/*.json",
-    "**/*.md",
-    "**/*.py",
-    "**/*.toml"
-  ],
-  "excludes": [
-    "__pypackages__",
-    "THUOCL",
-    "target",
-    "rime-*"
-  ],
-  "plugins": [
-    "https://plugins.dprint.dev/json-0.14.0.wasm",
-    "https://plugins.dprint.dev/markdown-0.12.0.wasm",
-    "https://plugins.dprint.dev/toml-0.5.3.wasm",
-    "https://plugins.dprint.dev/yapf-0.2.0.exe-plugin@14c42b703709e81f813c6674a8110c522af0ea78b6298f4f73721121a1a03701"
-  ],
-  "yapf": {
-    "based_on_style": "pep8",
-    "column_limit": 120,
-    "spaces_before_comment": 4
-  }
+	"$schema": "https://dprint.dev/schemas/v0.json",
+	"lineWidth": 100,
+	"excludes": ["__pycache__", "__pypackages__", "rime-*", "THUOCL", "target"],
+	"plugins": [
+		"https://plugins.dprint.dev/biome-0.6.0.wasm",
+		"https://plugins.dprint.dev/markdown-0.17.8.wasm",
+		"https://plugins.dprint.dev/toml-0.6.3.wasm",
+		"https://plugins.dprint.dev/ruff-0.3.9.wasm",
+		"https://plugins.dprint.dev/g-plane/pretty_yaml-v0.5.0.wasm"
+	],
+	"yaml": {
+		"printWidth": 200,
+		"formatComments": true,
+		"preferSingleLine": true
+	}
 }

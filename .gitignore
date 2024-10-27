@@ -1,5 +1,4 @@
 /target/
-/__pycache__/
-/__pypackages__/
+/.venv/
 
-/pyflow.lock
+uv.lock

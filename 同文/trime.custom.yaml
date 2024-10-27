@@ -34,6 +34,7 @@ patch:
   "preset_keys/Hide/label": "隐"
   "preset_keys/Return/label": "Etr"
   "preset_keys/Shift_L": { label: Sft, send: Shift_L, shift_lock: ascii_long }
+  "preset_keys/Shift_R": { label: Sft, send: Shift_L, shift_lock: click }
   "preset_keys/space/label": "⊔"
   "preset_keys/ButtonPaste": { label: 贴, send: Control+v }
   "preset_keys/ButtonH": { label: "一", send: "H" }
@@ -267,7 +268,7 @@ patch:
       - { click: "g", long_click: '"', swipe_up: '"' }
       - { click: "h", long_click: Left, swipe_up: Left }
       - { click: "j", long_click: Down, swipe_up: Down }
-      - { click: "k", long_click: Left, swipe_up: Left }
+      - { click: "k", long_click: Up, swipe_up: Up }
       - { click: "l", long_click: Right, swipe_up: Right }
       - { click: ";", long_click: ":", swipe_up:":" }
       # 行
@@ -344,7 +345,7 @@ patch:
       # 行
       - { click: cut_all }
       - { click: Left }
-      - { click: Shift_L }
+      - { click: Shift_R }
       - { click: Right }
       - { click: paste }
       # 行

@@ -1,13 +1,8 @@
-[tool.pyflow]
-py_version = "3.9"
-
-
-[tool.pyflow.scripts]
-generate = "make:generate"
-
-
-[tool.pyflow.dependencies]
-pyyaml = "^5.4.1"
-
-
-[tool.pyflow.dev-dependencies]
+[project]
+name = "cosmos-svnpin"
+version = "0.1.0"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pyyaml>=6.0",
+]
