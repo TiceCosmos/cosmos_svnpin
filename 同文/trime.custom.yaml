@@ -13,22 +13,39 @@ width:
   12: &w12 8.334
 
 height:
-  1: &hbody 60
-  2: &htool 54
+  1: &hbody 180
+  2: &htool 60
 
 patch:
   "style/key_height": *hbody
   "style/key_text_size": 22
   "style/key_long_text_size": 22
-  "style/keyboard_height": 280
+  "style/keyboard_height": 300
   "style/keyboard_height_land": 220
+  "style/locale": zh_CN
   "style/reset_ascii_mode": true
   "style/layout/min_length": 1
+  "style/layout/max_length": 50
+  "style/layout/max_width": 1000
+  "style/layout/sticky_lines": 4
+  "style/layout/sticky_lines_land": 0
+  "style/layout/max_entries": 4
   "style/window/@0/move": " "
+  "style/window/@2/label": "%s"
+
+  "liquid_keyboard/fixed_key_bar/position": right
+  "liquid_keyboard/fixed_key_bar/keys":
+    - liquid_keyboard_switch
+    - liquid_keyboard_clipboard
+    - liquid_keyboard_emoji
+    - BackSpace
+    - liquid_keyboard_exit
 
   "preset_keys/Keyboard_default/label": "汉"
-  "preset_keys/Keyboard_edit": { label: "<|>", send: Eisu_toggle, select: cosmos_edit }
-  "preset_keys/Keyboard_letter": { label: "英", send: Eisu_toggle, select: cosmos_letter }
+  "preset_keys/Keyboard_edit":
+    { label: "<|>", send: Eisu_toggle, select: cosmos_edit }
+  "preset_keys/Keyboard_letter":
+    { label: "英", send: Eisu_toggle, select: cosmos_letter }
   "preset_keys/Keyboard_number/label": "数"
   "preset_keys/BackSpace/label": "⨂"
   "preset_keys/Hide/label": "隐"
@@ -44,8 +61,10 @@ patch:
   "preset_keys/ButtonZ": { label: "⼄", send: "Z" }
   "preset_keys/ButtonB": { label: "<", send: "B" }
   "preset_keys/ButtonE": { label: ">", send: "E" }
-  "preset_keys/Baidu": { label: 百度, command: run, option: "https://www.baidu.com/s?wd=%4$s" }
-  "preset_keys/Bing": { label: 必应, command: run, option: "https://cn.bing.com/search?q=%4$s" }
+  "preset_keys/Baidu":
+    { label: 百度, command: run, option: "https://www.baidu.com/s?wd=%4$s" }
+  "preset_keys/Bing":
+    { label: 必应, command: run, option: "https://cn.bing.com/search?q=%4$s" }
 
   "preset_keyboards/cosmos_svnpin_land":
     name: "全键双拼"
@@ -56,54 +75,54 @@ patch:
     reset_ascii_mode: true
     keys:
       # 行
-      - { click: ButtonB, hint: "开始", width: *w12 }
-      - { click: "1", width: *w12 }
-      - { click: "2", width: *w12 }
+      - { click: Hide, width: *w12, long_click: ButtonB, swipe_up: ButtonB, has_menu: ButtonB, hint: "开始" }
+      - { click: "1", width: *w12, long_click: "！", swipe_up: "！" }
+      - { click: "2", width: *w12, long_click: "@", swipe_up: "@" }
       - { click: "3", width: *w12 }
-      - { click: "4", width: *w12 }
-      - { click: "5", width: *w12 }
-      - { click: "6", width: *w12 }
-      - { click: "7", width: *w12 }
-      - { click: "8", width: *w12 }
-      - { click: "9", width: *w12 }
-      - { click: "0", width: *w12 }
-      - { click: ButtonPaste, has_menu: ButtonE, hint: "结束", width: *w12 }
+      - { click: "4", width: *w12, long_click: "￥", swipe_up: "￥" }
+      - { click: "5", width: *w12, long_click: "——", swipe_up: "——" }
+      - { click: "6", width: *w12, long_click: "……", swipe_up: "……" }
+      - { click: "7", width: *w12, long_click: "《", swipe_up: "《" }
+      - { click: "8", width: *w12, long_click: "》", swipe_up: "》" }
+      - { click: "9", width: *w12, long_click: "（", swipe_up: "（" }
+      - { click: "0", width: *w12, long_click: "）", swipe_up: "）" }
+      - { click: ButtonPaste, width: *w12, long_click: DeleteCandidate, swipe_up: DeleteCandidate, has_menu: ButtonE, hint: "结束" }
       # 行
-      - { click: "q", width: *w10, label: "Q", hint: "iu", long_click: "1", swipe_up: "1" }
-      - { click: "w", width: *w10, label: "W", hint: "ia ua", long_click: "2", swipe_up: "2" }
-      - { click: "e", width: *w10, label: "E", hint: "e", long_click: "3", swipe_up: "3" }
-      - { click: "r", width: *w10, label: "R", hint: "uan", long_click: "4", swipe_up: "4" }
-      - { click: "t", width: *w10, label: "T", hint: "ue ve", long_click: "5", swipe_up: "5" }
-      - { click: "y", width: *w10, label: "Y", hint: "ing uai", long_click: "6", swipe_up: "6" }
-      - { click: "u", width: *w10, label: "U", hint: "u", long_click: "7", swipe_up: "7" }
-      - { click: "i", width: *w10, label: "I", hint: "i", long_click: "8", swipe_up: "8" }
-      - { click: "o", width: *w10, label: "O", hint: "o uo", long_click: "9", swipe_up: "9" }
-      - { click: "p", width: *w10, label: "P", hint: "un", long_click: "0", swipe_up: "0" }
+      - { click: "q", width: *w10, label: "Q", hint: "iu", long_click: "～", swipe_up: "～" }
+      - { click: "w", width: *w10, label: "W", hint: "ia ua", long_click: "·", swipe_up: "·" }
+      - { click: "e", width: *w10, label: "E", hint: "e" }
+      - { click: "r", width: *w10, label: "R", hint: "uan", long_click: "“", swipe_up: "“" }
+      - { click: "t", width: *w10, label: "T", hint: "ue ve", long_click: "”", swipe_up: "”" }
+      - { click: "y", width: *w10, label: "Y", hint: "ing uai", long_click: redo, swipe_up: redo }
+      - { click: "u", width: *w10, label: "U", hint: "u" }
+      - { click: "i", width: *w10, label: "I", hint: "i", long_click: "「", swipe_up: "「" }
+      - { click: "o", width: *w10, label: "O", hint: "o uo", long_click: "」", swipe_up: "」" }
+      - { click: "p", width: *w10, label: "P", hint: "un", long_click: "、", swipe_up: "、" }
       # 行
-      - { click: "a", width: *w9, label: "A", hint: "a", long_click: "“”{Left}", swipe_up: "“”{Left}" }
-      - { click: "s", width: *w9, label: "S", hint: "ong iong", long_click: "‘’{Left}", swipe_up: "‘’{Left}" }
-      - { click: "d", width: *w9, label: "D", hint: "iang uang", long_click: "《》{Left}", swipe_up: "《》{Left}" }
-      - { click: "f", width: *w9, label: "F", hint: "en", long_click: "￥", swipe_up: "￥" }
-      - { click: "g", width: *w9, label: "G", hint: "eng", long_click: "·", swipe_up: "·" }
-      - { click: "h", width: *w9, label: "H", hint: "ang", long_click: "——", swipe_up: "——" }
-      - { click: "j", width: *w9, label: "J", hint: "an", long_click: "……", swipe_up: "……" }
-      - { click: "k", width: *w9, label: "K", hint: "ao", long_click: "～", swipe_up: "～" }
-      - { click: "l", width: *w9, label: "L", hint: "ai", long_click: "：", swipe_up: "：" }
+      - { click: "a", width: *w9, label: "A", hint: "a", long_click: select_all, swipe_up: select_all }
+      - { click: "s", width: *w9, label: "S", hint: "ong iong", long_click: "：", swipe_up: "：" }
+      - { click: "d", width: *w9, label: "D", hint: "iang uang", long_click: "；", swipe_up: "；" }
+      - { click: "f", width: *w9, label: "F", hint: "en", long_click: "‘", swipe_up: "‘" }
+      - { click: "g", width: *w9, label: "G", hint: "eng", long_click: "’", swipe_up: "’" }
+      - { click: "h", width: *w9, label: "H", hint: "ang", long_click: Left, swipe_up: Left }
+      - { click: "j", width: *w9, label: "J", hint: "an", long_click: Down, swipe_up: Down }
+      - { click: "k", width: *w9, label: "K", hint: "ao", long_click: Up, swipe_up: Up }
+      - { click: "l", width: *w9, label: "L", hint: "ai", long_click: Right, swipe_up: Right }
       # 行
-      - { click: "z", width: *w8, label: "Z", hint: "ei", long_click: "@", swipe_up: "@" }
-      - { click: "x", width: *w8, label: "X", hint: "ie", long_click: "！", swipe_up: "！" }
-      - { click: "c", width: *w8, label: "C", hint: "iao", long_click: "？", swipe_up: "？" }
-      - { click: "v", width: *w8, label: "V", hint: "v ui", long_click: "。", swipe_up: "。" }
+      - { click: "z", width: *w8, label: "Z", hint: "ei", long_click: undo, swipe_up: undo }
+      - { click: "x", width: *w8, label: "X", hint: "ie", long_click: cut, swipe_up: cut }
+      - { click: "c", width: *w8, label: "C", hint: "iao", long_click: copy, swipe_up: copy }
+      - { click: "v", width: *w8, label: "V", hint: "v ui", long_click: paste, swipe_up: paste }
       - { click: "b", width: *w8, label: "B", hint: "ou", long_click: "，", swipe_up: "，" }
-      - { click: "n", width: *w8, label: "N", hint: "in", long_click: "、", swipe_up: "、" }
-      - { click: "m", width: *w8, label: "M", hint: "ian", long_click: "；", swipe_up: "；" }
+      - { click: "n", width: *w8, label: "N", hint: "in", long_click: "。", swipe_up: "。" }
+      - { click: "m", width: *w8, label: "M", hint: "ian", long_click: "？", swipe_up: "？" }
       - { click: BackSpace, width: *w8 }
       # 行
-      - { click: Keyboard_letter, width: *w5, height: *htool, long_click: liquid_keyboard_switch, swipe_up: liquid_keyboard_switch, has_menu: ButtonH }
-      - { click: Keyboard_number, width: *w5, long_click: F4, swipe_up: F4, has_menu: ButtonS }
+      - { click: Keyboard_letter, width: *w5, height: *htool, long_click: F4, swipe_up: F4, has_menu: ButtonH }
+      - { click: Keyboard_number, width: *w5, long_click: Color_settings, swipe_up: Color_settings, has_menu: ButtonS }
       - { click: space, width: *w5, has_menu: ButtonP }
-      - { click: Keyboard_edit, width: *w5, long_click: Color_settings, swipe_up: Color_settings, has_menu: ButtonN }
-      - { click: Return, width: *w5, long_click: DeleteCandidate, swipe_up: DeleteCandidate, has_menu: ButtonZ, label: "Etr" }
+      - { click: Keyboard_edit, width: *w5, long_click: liquid_keyboard_clipboard, swipe_up: liquid_keyboard_clipboard, has_menu: ButtonN }
+      - { click: Return, width: *w5, long_click: liquid_keyboard_switch, swipe_up: liquid_keyboard_switch, has_menu: ButtonZ, label: "Etr" }
 
   "preset_keyboards/cosmos_svnpin_port":
     name: "双键双拼"
@@ -115,14 +134,14 @@ patch:
     width: *w6
     keys:
       # 行
-      - { click: ButtonB, hint: "开始", width: *w8 }
-      - { click: { commit: "、" }, width: *w8, long_click: { commit: "https://" }, swipe_up: { commit: "https://" } }
-      - { click: { commit: "；" }, width: *w8, long_click: { commit: "http://" }, swipe_up: { commit: "http://" } }
-      - { click: { commit: "，" }, width: *w8, long_click: { commit: "www." }, swipe_up: { commit: "www." } }
-      - { click: { commit: "。" }, width: *w8, long_click: { commit: ".cn" }, swipe_up: { commit: ".cn" } }
-      - { click: { commit: "！" }, width: *w8, long_click: { commit: ".com" }, swipe_up: { commit: ".com" } }
-      - { click: { commit: "？" }, width: *w8, long_click: { commit: ".org" }, swipe_up: { commit: ".org" } }
-      - { click: ButtonPaste, width: *w8, has_menu: ButtonE, hint: "结束" }
+      - { click: Hide, width: *w8, long_click: ButtonB, swipe_up: ButtonB, has_menu: ButtonB, hint: "开始" }
+      - { click: "、", width: *w8 }
+      - { click: "；", width: *w8 }
+      - { click: "，", width: *w8 }
+      - { click: "。", width: *w8 }
+      - { click: "！", width: *w8 }
+      - { click: "？", width: *w8 }
+      - { click: ButtonPaste, width: *w8, long_click: DeleteCandidate, swipe_up: DeleteCandidate, has_menu: ButtonE, hint: "结束" }
       # 行
       - { click: q, label: "Q", hint: "iu", long_click: "5", swipe_up: "5" }
       - { click: w, label: "W　E", hint: "ia ua e", long_click: "6", swipe_up: "6" }
@@ -131,25 +150,25 @@ patch:
       - { click: i, label: "I　O", hint: "i o uo", long_click: "9", swipe_up: "9" }
       - { click: p, label: "P", hint: "un", long_click: "0", swipe_up: "0" }
       # 行
-      - { click: a, label: "A", hint: "a", long_click: { commit: "￥" }, swipe_up: { commit: "￥" } }
+      - { click: a, label: "A", hint: "a", long_click: "￥", swipe_up: "￥" }
       - { click: s, label: "S　D", hint: "ong [iu]_ng", long_click: "1", swipe_up: "1" }
       - { click: f, label: "F　G", hint: "en eng", long_click: "2", swipe_up: "2" }
       - { click: h, label: "H", hint: "ang", long_click: "3", swipe_up: "3" }
       - { click: j, label: "J　K", hint: "an ao", long_click: "4", swipe_up: "4" }
-      - { click: l, label: "L", hint: "ai", long_click: { commit: "……" }, swipe_up: { commit: "……" } }
+      - { click: l, label: "L", hint: "ai", long_click: "……", swipe_up: "……" }
       # 行
       - { click: z, label: "Z", hint: "ei", long_click: "@", swipe_up: "@" }
-      - { click: x, label: "X　C", hint: "ie iao", long_click: "{Mode_switch}《》{Left}{Mode_switch}", swipe_up: "{Mode_switch}《》{Left}{Mode_switch}" }
-      - { click: v, label: "V", hint: "v ui", long_click: "{Mode_switch}“”{Left}{Mode_switch}", swipe_up: "{Mode_switch}“”{Left}{Mode_switch}" }
-      - { click: b, label: "B　N", hint: "ou in", long_click: "{Mode_switch}‘’{Left}{Mode_switch}", swipe_up: "{Mode_switch}‘’{Left}{Mode_switch}" }
-      - { click: m, label: "M", hint: "ian", long_click: "{Mode_switch}「」{Left}{Mode_switch}", swipe_up: "{Mode_switch}「」{Left}{Mode_switch}" }
+      - { click: x, label: "X　C", hint: "ie iao", long_click: "《", swipe_up: "《" }
+      - { click: v, label: "V", hint: "v ui", long_click: "“", swipe_up: "“" }
+      - { click: b, label: "B　N", hint: "ou in", long_click: "”", swipe_up: "”" }
+      - { click: m, label: "M", hint: "ian", long_click: "》", swipe_up: "》" }
       - { click: BackSpace, swipe_up: cut_all }
       # 行
-      - { click: Keyboard_letter, width: *w5, height: *htool, long_click: liquid_keyboard_switch, swipe_up: liquid_keyboard_switch, has_menu: ButtonH }
-      - { click: Keyboard_number, width: *w5, long_click: F4, swipe_up: F4, has_menu: ButtonS }
+      - { click: Keyboard_letter, width: *w5, height: *htool, long_click: F4, swipe_up: F4, has_menu: ButtonH }
+      - { click: Keyboard_number, width: *w5, long_click: Color_settings, swipe_up: Color_settings, has_menu: ButtonS }
       - { click: space, width: *w5, has_menu: ButtonP }
-      - { click: Keyboard_edit, width: *w5, long_click: Color_settings, swipe_up: Color_settings, has_menu: ButtonN }
-      - { click: Return, width: *w5, long_click: DeleteCandidate, swipe_up: DeleteCandidate, has_menu: ButtonZ, label: "Etr" }
+      - { click: Keyboard_edit, width: *w5, long_click: liquid_keyboard_clipboard, swipe_up: liquid_keyboard_clipboard, has_menu: ButtonN }
+      - { click: Return, width: *w5, long_click: liquid_keyboard_switch, swipe_up: liquid_keyboard_switch, has_menu: ButtonZ, label: "Etr" }
 
   "preset_keyboards/cosmos_jiugong_pinyin":
     name: "九宫拼音"
@@ -190,11 +209,11 @@ patch:
       - { click: w, label: "WXYZ", long_click: "9", swipe_up: "9" }
       - { click: BackSpace }
       # 行
-      - { click: Keyboard_letter, width: *w5, height: *htool, long_click: liquid_keyboard_switch, swipe_up: liquid_keyboard_switch, has_menu: ButtonH }
-      - { click: Keyboard_number, width: *w5, long_click: F4, swipe_up: F4, has_menu: ButtonS }
+      - { click: Keyboard_letter, width: *w5, height: *htool, long_click: F4, swipe_up: F4, has_menu: ButtonH }
+      - { click: Keyboard_number, width: *w5, long_click: Color_settings, swipe_up: Color_settings, has_menu: ButtonS }
       - { click: space, width: *w5, has_menu: ButtonP }
-      - { click: Keyboard_edit, width: *w5, long_click: Color_settings, swipe_up: Color_settings, has_menu: ButtonN }
-      - { click: Return, width: *w5, long_click: DeleteCandidate, swipe_up: DeleteCandidate, has_menu: ButtonZ, label: "Etr" }
+      - { click: Keyboard_edit, width: *w5, long_click: liquid_keyboard_clipboard, swipe_up: liquid_keyboard_clipboard, has_menu: ButtonN }
+      - { click: Return, width: *w5, long_click: liquid_keyboard_switch, swipe_up: liquid_keyboard_switch, has_menu: ButtonZ, label: "Etr" }
 
   "preset_keyboards/cosmos_stroke":
     name: "笔划键盘"
@@ -206,30 +225,31 @@ patch:
     width: *w5
     keys:
       # 行
-      - { click: "5", width: *w6 }
-      - { click: "6", width: *w6 }
-      - { click: "7", width: *w6 }
-      - { click: "8", width: *w6 }
-      - { click: "9", width: *w6 }
-      - { click: "0", width: *w6 }
-      - { click: "1", width: *w4 }
-      - { click: "2", width: *w4 }
-      - { click: "3", width: *w4 }
-      - { click: "4", width: *w4 }
+      - { click: "4", width: *w5 }
+      - { click: "5", width: 13.333 }
+      - { click: "6", width: 13.333 }
+      - { click: "7", width: 13.333 }
+      - { click: "8", width: 13.333 }
+      - { click: "9", width: 13.333 }
+      - { click: "0", width: 13.333 }
       # 行
-      - { click: "H", width: *w5, label: "一" }
-      - { click: "S", width: *w5, label: "丨" }
-      - { click: "P", width: *w5, label: "丿" }
-      - { click: "N", width: *w5, label: "丶" }
-      - { click: "Z", width: *w5, label: "⼄" }
-      - { click: "X", width: *w2, label: "*" }
-      - { click: BackSpace, width: *w2 }
+      - { click: "3", width: *w5 }
+      - { click: "H", width: 40, label: "一" }
+      - { click: "S", width: 40, label: "丨" }
       # 行
-      - { click: Keyboard_letter, width: *w5, height: *htool, long_click: liquid_keyboard_switch, swipe_up: liquid_keyboard_switch, has_menu: ButtonH }
-      - { click: Keyboard_number, width: *w5, long_click: F4, swipe_up: F4, has_menu: ButtonS }
-      - { click: space, width: *w5, has_menu: ButtonP }
-      - { click: Keyboard_edit, width: *w5, long_click: Color_settings, swipe_up: Color_settings, has_menu: ButtonN }
-      - { click: Return, width: *w5, long_click: DeleteCandidate, swipe_up: DeleteCandidate, has_menu: ButtonZ, label: "Etr" }
+      - { click: "2", width: *w5 }
+      - { click: "P", width: 40, label: "丿" }
+      - { click: "N", width: 40, label: "丶" }
+      # 行
+      - { click: "1", width: *w5 }
+      - { click: "Z", width: 40, label: "⼄" }
+      - { click: BackSpace, width: 40 }
+      # 行
+      - { click: Keyboard_letter, width: *w5, height: *htool, long_click: F4, swipe_up: F4 }
+      - { click: Keyboard_number, width: *w5, long_click: Color_settings, swipe_up: Color_settings }
+      - { click: space, width: *w5 }
+      - { click: Keyboard_edit, width: *w5, long_click: liquid_keyboard_clipboard, swipe_up: liquid_keyboard_clipboard }
+      - { click: Return, width: *w5, long_click: liquid_keyboard_switch, swipe_up: liquid_keyboard_switch, label: "Etr" }
 
   "preset_keyboards/cosmos_letter":
     name: "二十六鍵英文"
@@ -270,7 +290,7 @@ patch:
       - { click: "j", long_click: Down, swipe_up: Down }
       - { click: "k", long_click: Up, swipe_up: Up }
       - { click: "l", long_click: Right, swipe_up: Right }
-      - { click: ";", long_click: ":", swipe_up:":" }
+      - { click: ";", long_click: ":", swipe_up: ":" }
       # 行
       - { click: Shift_L }
       - { click: "z", long_click: "<", swipe_up: "<" }
@@ -313,9 +333,9 @@ patch:
     - { click: "=", width: 15.384 }
     # 行
     - { click: "@", width: 15.384 }
-    - { click: ".", width: 23.077 }
-    - { click: "0", width: 23.077, long_click: "零", swipe_up: "零" }
     - { click: "$", width: 23.077, long_click: "￥", swipe_up: "￥" }
+    - { click: "0", width: 23.077, long_click: "零", swipe_up: "零" }
+    - { click: ".", width: 23.077 }
     - { click: BackSpace, width: 15.384 }
     # 行
     - { click: Keyboard_default, width: *w5, height: *htool }

@@ -51,16 +51,16 @@ speller:
     - erase/^[a-z][a-z][a-z]+[A-Z]*$/
     - xlit/qwertyuiopasdfghjklzxcvbnm/qwwrryyiipassffhjjlzxxvbbm/
     - derive/^[a-z]+([A-Z]+)/B$1E/
+    - xform/^([a-z]+)([HSPNZ])$/$1$2$2$2$2/
+    - xform/^([a-z]+[HSPNZ])([HSPNZ])$/$1$2$2$2/
+    - xform/^([a-z]+[HSPNZ]{2})([HSPNZ])$/$1$2$2/
+    - xform/^([a-z]+[HSPNZ]{3}).+([HSPNZ])$/$1$2/
+    - derive/^([a-z]{2}).+/$1/
+    - derive/^([a-z]{2}[HSPNZ]).+/$1/
+    - derive/^([a-z]{2}[HSPNZ]{2}).+/$1/
+    - derive/^([a-z]{2}[HSPNZ]{3}).+/$1/
     - derive/^[a-z]([a-z])([A-Z]+)/B$1$2/
     - derive/^([a-z])[a-z]([A-Z]+)/$1E$2/
-    - xform/^([a-zBE]{2})([HSPNZ])$/$1$2$2$2$2/
-    - xform/^([a-zBE]{2}[HSPNZ])([HSPNZ])$/$1$2$2$2/
-    - xform/^([a-zBE]{2}[HSPNZ]{2})([HSPNZ])$/$1$2$2/
-    - xform/^([a-zBE]{2}[HSPNZ]{3}).+([HSPNZ])$/$1$2/
-    - derive/^([a-zBE]{2}).+/$1/
-    - derive/^([a-zBE]{2}[HSPNZ]).+/$1/
-    - derive/^([a-zBE]{2}[HSPNZ]{2}).+/$1/
-    - derive/^([a-zBE]{2}[HSPNZ]{3}).+/$1/
     - derive/^(B[HSPNZ]{1}).+/$1/
     - derive/^(B[HSPNZ]{2}).+/$1/
     - derive/^(B[HSPNZ]{3}).+/$1/
@@ -95,14 +95,13 @@ speller:
 translator:
   prism: cosmos_svnpin_port
   preedit_format:
-    - xform/B([A-Z])E/<$1>/
-    - xform/B([A-Z])/<$1/
-    - xform/([A-Z])E/$1>/
-    - xlit/BE/**/
+    - xform/B([a-z])/<$1/
+    - xform/([a-z])E/$1>/
+    - xlit/BE/<>/
 
 custom_phrase:
   dictionary: ""
-  user_dict: custom_phrase
+  user_dict: custom_phrase_port
   db_class: tabledb
   enable_sentence: false
   enable_completion: false

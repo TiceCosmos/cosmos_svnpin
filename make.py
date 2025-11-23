@@ -11,6 +11,7 @@ import yaml
 version = datetime.datetime.now().strftime("%Y.%m.%d")
 
 thuocl_dict_list = [file.removesuffix(".txt") for file in os.listdir(os.path.join("THUOCL", "data"))]
+thuocl_dict_list.sort()
 
 
 def 复制文件(target_dir: str, origin_dir: str, filename: str) -> None:

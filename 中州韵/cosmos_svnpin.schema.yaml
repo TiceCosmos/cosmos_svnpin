@@ -52,6 +52,7 @@ speller:
   delimiter: " '"
   algebra:
     - xform/^([A-Z]*)([a-z]*)$/$2$1/
+    - xform/^([jqxy])u([HSPNZ]*)$/$1v$2/
     - xform/^([mn])([HSPNZ]*)$/$1$1$2/
     - xform/^([aoe])([HSPNZ]*)$/$1$1$2/
     - xform/^([aoe])(ng[HSPNZ]*)$/$1$1$2/
@@ -128,6 +129,7 @@ translator:
     - xform/(^|[ '])v/$1zh/
     - xform/(^|[ '])i/$1ch/
     - xform/(^|[ '])u/$1sh/
+    - xform/([jqxy])v/$1u/
     - xform/([nl])v/$1ü/
     - xlit/CVBNM/⼀⼁⼃⼂⼄/
 

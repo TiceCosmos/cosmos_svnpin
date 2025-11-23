@@ -11,6 +11,7 @@ engine:
   translators:
     - echo_translator
     - script_translator
+    - table_translator@custom_phrase
 
 speller:
   algebra:
@@ -48,17 +49,24 @@ speller:
     - erase/^[a-z][a-z]$/
     - erase/^[a-z][A-Z]*$/
     - erase/^[a-z][a-z][a-z]+[A-Z]*$/
-    - derive/^[a-z]+([A-Z]+)/B$1E/
+    - xform/^([a-z]+)([HSPNZ])$/$1$2$2$2$2/
+    - xform/^([a-z]+[HSPNZ])([HSPNZ])$/$1$2$2$2/
+    - xform/^([a-z]+[HSPNZ]{2})([HSPNZ])$/$1$2$2/
+    - xform/^([a-z]+[HSPNZ]{3}).+([HSPNZ])$/$1$2/
+    - derive/^([a-z]{2}).+/$1/
+    - derive/^([a-z]{2}[HSPNZ]).+/$1/
+    - derive/^([a-z]{2}[HSPNZ]{2}).+/$1/
+    - derive/^([a-z]{2}[HSPNZ]{3}).+/$1/
     - derive/^[a-z]([a-z])([A-Z]+)/B$1$2/
     - derive/^([a-z])[a-z]([A-Z]+)/$1E$2/
-    - xform/^([a-zBE]{2})([HSPNZ])$/$1$2$2$2$2/
-    - xform/^([a-zBE]{2}[HSPNZ])([HSPNZ])$/$1$2$2$2/
-    - xform/^([a-zBE]{2}[HSPNZ]{2})([HSPNZ])$/$1$2$2/
-    - xform/^([a-zBE]{2}[HSPNZ]{3}).+([HSPNZ])$/$1$2/
-    - derive/^([a-zBE]{2}).+/$1/
-    - derive/^([a-zBE]{2}[HSPNZ]).+/$1/
-    - derive/^([a-zBE]{2}[HSPNZ]{2}).+/$1/
-    - derive/^([a-zBE]{2}[HSPNZ]{3}).+/$1/
 
 translator:
   prism: cosmos_svnpin_land
+
+custom_phrase:
+  dictionary: ""
+  user_dict: custom_phrase
+  db_class: tabledb
+  enable_sentence: false
+  enable_completion: false
+  initial_quality: 1
